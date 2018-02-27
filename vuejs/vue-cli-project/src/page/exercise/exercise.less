@@ -1,0 +1,86 @@
+.vux-swiper{
+    min-height: 415px;
+}
+.title{
+    margin-top:5px;
+}
+.title::before{
+    content:"单选题";
+    position: relative;
+    left:0px;
+    background-color:#3879D9;
+    color:#fff;
+    padding:2px 5px;
+    margin-right:5px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+div.content p:nth-of-type(1) span::before,div.content p:nth-of-type(2) span::before,div.content p:nth-of-type(3) span::before,div.content p:nth-of-type(3) span::before,div.content p:nth-of-type(4) span::before{
+    
+    display: inline-block;
+    text-align: center;
+    width:20px;
+    height:20px;
+    line-height: 20px;
+    border:1px solid #ccc;
+    border-radius:50%;
+    -webkit-border-radius:50%;
+    margin-right:5px;
+}
+
+div.content p:nth-of-type(1) span::before{
+    content:"A";
+}
+div.content p:nth-of-type(2) span::before{
+    content:"B";
+}
+div.content p:nth-of-type(3) span::before{
+    content:"C";
+}
+div.content p:nth-of-type(4) span::before{
+    content:"D";
+}
+div.content p.success:nth-of-type(1) span::before{
+   background-color:#3879D9;
+   color:#fff;
+}
+div.content p.success:nth-of-type(2) span::before{
+    background-color:#3879D9;
+    color:#fff;
+ }
+ div.content p.success:nth-of-type(3) span::before{
+    background-color:#3879D9;
+    color:#fff;
+ }
+ div.content p.success:nth-of-type(4) span::before{
+    background-color:#3879D9;
+    color:#fff;
+ }
+
+ div.content p.error:nth-of-type(1) span::before{
+    background-color:red;
+    color:#fff;
+ }
+ div.content p.error:nth-of-type(2) span::before{
+     background-color:red;
+     color:#fff;
+  }
+  div.content p.error:nth-of-type(3) span::before{
+     background-color:red;
+     color:#fff;
+  }
+  div.content p.error:nth-of-type(4) span::before{
+     background-color:red;
+     color:#fff;
+  }
+.opaction-btn{
+    width:100%;
+    text-align:center;
+}
+.opaction-btn a{
+    color:#666;
+    text-decoration: none
+}
+.opaction-btn a.active{
+    color:#3879D9;
+}

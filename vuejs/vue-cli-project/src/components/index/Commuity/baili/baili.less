@@ -1,0 +1,32 @@
+.bailiTab{
+    position: fixed;
+    top:44px;
+    z-index: 100
+}
+.item{
+    display: -webkit-box;
+    display: box;
+    overflow: hidden;
+    margin:5px;
+    .content{
+        margin:5px;
+        h3{
+           word-break: break-all;
+        }
+    }
+}
+.pull-down.noanimate, .pull-up.noanimate {
+    -webkit-transition: height 0s;
+    -moz-transition: height 0s;
+    transition: height 0s;
+}
+.pull-down, .pull-up {
+    position: relative;
+    background-color: #f0f0f0;
+    text-align: center;
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    transition: height 0.3s;
+}
