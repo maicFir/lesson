@@ -7,6 +7,6 @@
 * cd nodejs/图片爬虫检索
 
 
-* nom install 
+* npm install 
 * node index.js    或者 node index2.js ....
 
