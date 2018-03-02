@@ -1,0 +1,43 @@
+{
+	"dec-1":[
+		"HTML/css",
+		"javascript",
+		"jquery",
+		"avalon",
+		"apicloud",
+		"sui/aui",
+		"mui",
+		"framework7",
+		"性能优化",
+		"bootsrap",
+		"移动框架"
+	],
+	"dec-2":[
+		{"src":"wmc_blog/item/project/tianmao.html","cnt":"天猫"},
+		{"src":"wmc_blog/item/project/Ecshop.html","cnt":"Ecshop商城"},
+		{"src":"wmc_blog/item/project/xiaomi.html","cnt":"小米官网"},
+		{"src":"wmc_blog/item/project/weipinghui.html","cnt":"唯品会"},
+		{"src":"wmc_blog/item/project/luowang.html","cnt":"落网音乐"},
+		{"src":"wmc_blog/item/project/jingdong.html","cnt":"京东"},
+		{"src":"wmc_blog/item/project/qq.html","cnt":"仿网页版qq"},
+		{"src":"wmc_blog/item/project/lehu.html","cnt":"乐乎主页"},
+		{"src":"wmc_blog/item/project/fengche.html","cnt":"风车乐栈"},
+		{"src":"wmc_blog/item/project/chinaNet.html","cnt":"中国电信"}
+	],
+	"dec-3":[
+		{"src":"wmc_blog/item/exercise/fryPlay.html","cnt":"灰机播放器"},
+		{"src":"wmc_blog/item/exercise/dcloud.html","cnt":"天空飘多云"},
+		{"src":"wmc_blog/item/exercise/fanye.html","cnt":"翻页效果"},
+		{"src":"wmc_blog/item/banner.html","cnt":"banner轮播图"}
+	],
+	"title":{
+		"note":"笔记分类",
+		"project":"个人前端项目",
+		"expercise":"平时练习"
+	},
+	"dection":{
+		"top":"top",
+		"bottom":"bottom"
+	}
+
+}

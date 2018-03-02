@@ -1,0 +1,81 @@
+*{padding:0px;margin:0px;}
+body{background:#EDEDEF;font-size:16px;}
+body img{border:none;}
+a{text-decoration:none;}
+ul,li{list-style:none;list-style-image:none;}
+/*头部*/
+#header{height:84px;background:#24292C;}
+#header .silde{width:930px;height:100%;margin:0 auto;}
+
+#header .silde .slide_c{height:100%;width:350px;float:left;margin-left:109px;}
+#header .silde .slide_c ul li{float:left;color:#EDEDEF;}
+#header .silde .slide_c ul li a{display:inline-block;padding:10px 10px;
+                                 text-align:center;text-align:center;margin-top:38px;color:#ccc;}
+#header .silde .slide_c ul li a:hover{color:#fff;transition:all 0.5s ease;}
+#header .silde .slide_r{height:100%;width:240px;float:right;margin-left:-200px;}
+/*信息输入框*/
+#header .silde .slide_r input{width:220px;height:24px;margin-top:38px;border-radius:12px;font-size:14px;font-family:"微软雅黑";
+                               background:#888;padding-left:8px;color:#fff;outline:none;border:none;}
+/*身体部分*/
+#container{width:930px;height:1000px;background:#e5e5e5;margin:30px auto;}
+#container img{float:left;height:110px;width:110px;float:left;}
+#container .box{height:110px;width:560px;float:left}
+#container .box .icon{background-image:url("http://l.bst.126.net/rsc/img/nav224.png?020");
+                       display:inline-block;height:110px;width:560px;}
+#container .box .c1{background-position:-112px -1px;width:140px;height:110px;float:left;}
+#container .box .c2{background-position:-252px -1px;width:140px;height:110px;float:left;}
+#container .box .c3{background-position:142px -1px;width:140px;height:110px;float:left;}
+#container .box .c4{background-position:283px -1px;width:140px;height:110px;float:left;}
+#container .box a .c1:hover{transition:all 0.8s ease;}
+/*右上方主页信息*/
+#container .Imformation{height:106px;width:234px;background:#EDEDEF;
+                               float:right;margin-left:26px;margin-top:-110px;border:1px solid #ccc;}
+#container .Imformation:hover{background:#fff;transition:all 0.8s ease;}
+#container .Imformation .author_name{height:40px;width:155px;padding:10px;margin:20px auto;
+                                          overflow:hidden;float:left;margin-top:0px;
+										  padding-top:30px;}
+#container .Imformation .author_name a{color:#444;}
+#container .Imformation li{float:left;}
+/*左下内容区域*/
+#container .body{height:854px;width:560px;background:#fff;margin-top:22px;
+                 float:left;margin:22px auto;position:relative;}
+#container .body .trangle_r{border-top:20px solid transparent;
+							border-right:20px solid transparent;
+							border-bottom:20px solid #fff;
+							border-left:20px solid #fff;
+							position:absolute;
+							left: 520px;
+							right: 506px;}
+#container .body .trangle_r1{border-top:20px solid #EDEDEF;
+							border-right:20px solid #EDEDEF;
+							border-bottom:20px solid transparent;
+							border-left:20px solid transparent;
+							position:absolute;
+							left: 520px;
+							right: 506px;}
+#container .body .trangle_r:hover{background:blue;}
+#container .body .trangle_l{
+							border-top:20px solid #fff;
+							border-right:20px solid #fff;
+							border-bottom:20px solid transparent;
+							border-left:20px solid transparent;
+							position:absolute;
+							left: -40px;
+							right: 756px;
+}
+#container .body h5{font-size:14px;padding:10px 40px;color:#ccc;}
+#container .body h5:hover{color:#7594B3;transition:all 0.8s ease;}
+#container .body .items{height:734px;width:500px;margin:0 auto;}
+#container .body .items img{width:100%;height:100%;float:left;}
+#container .body p{color:#444;padding:10px 30px;font-size:14px;}
+#container .body .single li{float:left;padding:10px 8px;padding-left:25px;}
+#container .body .single li .s1{font-size:14px;color:#ccc;float:left;}
+#container .body .single li a:hover{color:#7594B3;transition:all 0.8s ease;}
+#container .body .single .like:after{content:"♥";font-size:15px;}
+/*右边身体信息部分*/
+#container .body_r{width:233px;height:210px;float:right;background:#EDEDEF;margin-top:0px;overflow:hidden;}
+#container .body_r .home{display:block;height:20px;width:235px;border-bottom:2px solid #ccc;
+                         padding:10px;color:#444;transition:all 0.8s ease;border:1px solid #ccc;}
+#container .body_r a li:hover{background:#fff;} 
+
+

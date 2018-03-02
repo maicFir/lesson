@@ -1,0 +1,14 @@
+
+{% extends 'layout.html' %}
+<ol class="breadcrumb">
+    <li><a href="/">管理首页</a></li>
+    <li><span>错误信息</span></li>
+</ol>
+<h3>错误提示</h3>
+{% block main %}
+<div class="alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>{{message}}</strong>
+    <p><a href="javascript:window.history.back()">返回</a></p>
+  </div>
+{% endblock main %}

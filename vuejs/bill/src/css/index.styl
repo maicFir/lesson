@@ -1,0 +1,125 @@
+$baseFontSize = 100;
+$baseWidth = 1080;
+// 1080设计搞
+rem(px) {
+	(px/$baseFontSize)*1rem
+}
+bg(w, h, src) {
+	width: rem(w);
+	height: rem(h);
+	background: url(src) 0 0 no-repeat;
+	background-size: 100%;
+}
+html, body {
+	height: 100%;
+}
+a {
+	background: transparent
+}
+
+a:focus {
+	outline: thin dotted
+}
+
+a:active,
+a:hover {
+	outline: 0
+}
+body {
+	color: #393939;
+	font-family: "Myriad Pro", Arial, "FZLanTingHei-R-GBK", "方正兰亭黑", "Microsoft YaHei", "微软雅黑", STHeiti, "华文黑体", SimSun, "宋体", sans-serif;
+}
+
+.page-container {
+	height: 100%;
+	min-height: rem(1920);
+	background: url(../img/bg.jpg) center center no-repeat;
+	background-size: 100%;
+}
+
+.page-wrapper {
+	position: relative;
+	height: 100%;
+}
+// 首页
+.page-0 {
+	.head-img {
+		position: relative;
+		bg(537, 305, "../img/xinnian.png");
+		margin: rem(130) auto 0;
+		.star {
+			position: absolute;
+			right: rem(-20);
+			top: 0;
+			bg(131, 138, "../img/fireworks.png");
+			animation: scale 2s infinite;
+		}
+	}
+	.text-dec {
+		bg(460, 160, "../img/thingsword.png");
+		margin: rem(25) auto 0;
+	}
+	.center-part {
+		position: relative;
+		width: rem(711);
+		height: rem(711);
+		margin: rem(122) auto rem(110);
+		bg(711, 711, "../img/centerBg.png");
+		.fire {
+			position: absolute;
+			left: 50%;
+			top: rem(-100);
+			bg(595, 298, "../img/firworks2.png");
+			transform: translateX(-50%);
+		}
+		.phone {
+			position: absolute;
+			left: 50%;
+			bottom: rem(-20);
+			transform: translateX(-50%);
+			bg(721, 374, "../img/phone.png");
+		}
+	}
+	.protol-part {
+		color: #fbb373;
+		text-align: center;
+		font-size: rem(30);
+		.agree {
+			position: relative;
+			> span {
+				&:before {
+					content: '';
+					display: inline-block;
+					bg(24, 24, "../img/check.png");
+					margin-right: rem(10);
+					vertical-aligin: middle;
+				}
+			}
+			> input {
+				display: none;
+			}
+			> input:checked + span:before {
+				background-image: url("../img/check-active.png");
+				background-size: 100%;
+			}			
+		}
+		> a {
+			color: #fbb373;
+		}
+	}
+	.start-btn {
+		bg(599, 147, "../img/start-btn.png");
+		margin: rem(20) auto 0;
+	}
+}
+
+@-webkit-keyframes scale {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale(0)
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: scale(1)
+	}
+}

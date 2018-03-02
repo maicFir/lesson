@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link rel="stylesheet" type="text/css" href="../project/css/font-awesome-4.3.0/css/font-awesome.min.css"/>
+  <title>飞机环绕播放</title>
+  <!--2015/11/29
+  	@chuanchuan
+  -->
+  <style>
+	*{padding:0px;margin:0px;}
+	body{background:#111;}
+	@keyframes ceil{
+		0%{opacity:0;
+		   transform:scale(0);
+		}
+		100%{
+			opacity:1;
+			transform:scale(3);
+		}
+	}
+
+	.box{width:80px;height:80px;border-radius:50%;margin:100px auto;position:relative;}
+	.box .fa-play{position:absolute;top:24px;left:30px;font-size:40px;color:#fff;}
+	.box .fa-pause{position:absolute;top:24px;left:30px;font-size:40px;color:#fff;display:none;}
+	.box:before{
+	        content:"";
+			position:absolute;
+			width:100%;
+			height:100%;
+			box-shadow:0px 0px 5px 5px #fff;
+			border-radius:50%;
+			animation: ceil 2s infinite ease;
+	   }
+	   .box .tipSlide{width:10px;height:10px;position:absolute;}
+  </style>
+ </head>
+ <body>
+	<div class="box">
+		<i class="fa fa-play"></i><!--播放-->
+		<i class="fa fa-pause"></i><!--暂停-->
+		<div class="tipSlide">
+			<i class="fa fa-plane" style="color:#fff;"></i>
+		</div>
+	</div>
+	<script type="text/javascript">
+
+	var tipDom = document.querySelector(".tipSlide");
+	var boxDom = document.querySelector(".box");
+	var arr = [];//装产生的旋转的小球
+	var x = 40;//x的中心坐标
+	var y = 40;//y的中心坐标
+	var radius = 0;//角度
+	var speed = 0.135;//速度
+	var timer = null;
+	function move(){
+		var timer = setInterval(function(){
+			radius+= speed;
+			var left = x+Math.sin(radius)*x;//小方块距离外层盒子的x坐标
+			var top = y+ Math.cos(radius)*y;//小方块距离内层盒子的y坐标
+			tipDom.style.left = left+"px";
+			tipDom.style.top = top+"px";
+			//创建尾巴
+			var lineDom = document.createElement("div");
+			//设置尾巴的宽度和高度
+			var lw = lineDom.style.width = 3+"px";
+			var lh = lineDom.style.height = 3+"px";
+			lineDom.style.position = "absolute";//给小方块设置绝对定位
+			lineDom.style.left = tipDom.offsetLeft+"px";//小尾巴的x轴位移
+			lineDom.style.top = tipDom.offsetTop+"px";//小尾巴的y轴位移
+			lineDom.style.background = randomColor();
+			boxDom.appendChild(lineDom);//将lineDom追加到boxDom上
+			arr.push(lineDom);
+			if(arr.length>30){
+				var items = arr.shift();/*shift:移除第一个并返回删除后整个数组中元素的值，
+										  unshift:在集合的开头添加一个或者更多元素，并返回新的长度
+										  pop:将集合中的最后一个元素删除，并返回删除后整个数组中元素的值
+										  push:在集合中添加新的元素，并返回新的的长度*/
+				boxDom.removeChild(items);//移除
+			}
+		},100);
+	}
+		//初始化调用
+		move();
+		//创建audio标签
+		var audioDom = document.createElement("audio");
+		//设置播放地址
+		audioDom.src="../music/Great White-Just Yesterday.mp3";
+		//音乐播放
+		function musicPlay(){ 
+			audioDom.play();
+		}
+		//暂停音乐
+		function musicStop(){
+			audioDom.pause();
+		};
+		//开始播放
+		var playDom = document.querySelector(".fa-play");
+		var pasueDom = document.querySelector(".fa-pause")
+		playDom.addEventListener("click",function(){
+			musicPlay();
+		    //清除小方块的移动
+			clearInterval(timer);
+			setInterval(timer);
+			pasueDom.style.display = "block";
+			playDom.style.display = "none";
+			boxDom.style.border = "none";
+		},false);
+		pasueDom.addEventListener("click",function(){
+			musicStop();
+			clearInterval(timer)
+			pasueDom.style.display = "none";
+			playDom.style.display = "block";
+			
+		},false);
+		/*随机颜色*/
+		function randomColor(){
+			var r = Math.floor(Math.random()*255);
+			var g = Math.floor(Math.random()*255);
+			var b = Math.floor(Math.random()*255);
+			return "rgb("+r+","+g+","+b+")";
+		}
+		
+	</script>
+ </body>
+</html>
+

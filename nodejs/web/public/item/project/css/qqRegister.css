@@ -1,0 +1,147 @@
+  * {
+  	padding: 0px;
+  	margin: 0px;
+  }
+  
+  body {
+  	background: #F6F6F6;
+  }
+  /*外边大容器*/
+  
+  #container {
+  	height: 540px;
+  	width: 600px;
+  	margin: 66px auto;
+  }
+  /*标题*/
+  
+  #container .header {
+  	text-align: center;
+  }
+  /*窗口内容的左边*/
+  
+  #container .items_l {
+  	width: 240px;
+  	height: 300px;
+  	margin-top: 86px;
+  	float: left;
+  }
+  
+  #container .items_l p {
+  	font-size: 18px;
+  	color: #838383;
+  	font-weight: 100;
+  	text-align: center;
+  }
+  
+  #container .items_l .inbox_l {
+  	width: 185px;
+  	height: 185px;
+  	border: 1px solid #000;
+  	margin: 20px auto;
+  	text-align: center
+  }
+  
+  #container .items_l .inbox_l img {
+  	margin-top: 11px;
+  }
+  
+  #container .items_l .use_tip {
+  	height: 38px;
+  	width: 198px;
+  	background: #E9E9E9;
+  	margin-left: 21px;
+  	text-align: center;
+  	line-height: 38px;
+  	font-size: 12px;
+  	color: #737373;
+  	float: left;
+  }
+  
+  #container .items_l .use_tip .question {}
+  
+  #container .items_l .qirlogo {
+  	margin-top: -130px;
+  }
+  /*窗口内容的右边*/
+  
+  #container .items_r {
+  	width: 240px;
+  	height: 300px;
+  	float: left;
+  	margin-left: 360px;
+  	margin-top: -287px;
+  }
+  
+  #container .items_r .its_1 {
+  	color: #838383;
+  	font-size: 12px;
+  	padding-left: 12px;
+  	padding-top: 90px;
+  }
+  
+  #container .items_r p {
+  	font-size: 18px;
+  	color: #838383;
+  	font-weight: 100;
+  	text-indent: -7em;
+  	text-shadow: 1px 1px 200px #fff;
+  	outline: none;
+  }
+  /*右边窗口输入框*/
+  
+  #container .items_r input {
+  	height: 34px;
+  	width: 232px;
+  	outline: none;
+  	border: 1px solid transparent;
+  	border-radius: 5px;
+  	margin-top: 10px;
+  	padding-left: 8px;
+  	box-shadow: inset 0px 0px 2px #999;
+  }
+  #container .items_r input:focus{
+  	box-shadow: 0px 0px 5px 5px #e5e5e5;
+  }
+  /*登陆按钮*/
+  
+  #container .items_r .btns {
+  	width: 124px;
+  	height: 34px;
+  	border-radius: 8px;
+  	background: #7DC82C;
+  	color: #fff;
+  	font-size: 15px;
+  	outline: none;
+  	text-align: center;
+  	line-height: 34px;
+  }
+   #container .items_r .btns:active{
+   	background:rgba(1,1,1,0.3);
+   }
+  /*提示信息按钮*/
+  
+  #container .link_qq {
+  	margin-left: 230px;
+  	margin-top: 110px;
+  }
+  
+  #container .link_qq input {
+  	width: 143px;
+  	height: 43px;
+  	background: #83B6F7;
+  	color: #fff;
+  	border-radius: 8px;
+  	outline: none;
+   border: 1px solid transparent;
+  }
+  #container .link_qq input:active{
+  	background:rgba(1,1,1,0.8);
+  	transition:all .5s ease;
+  }
+  /*底部*/
+  
+  .footer {
+  	margin-left: 150px;
+  	margin-top: 480px;
+  }

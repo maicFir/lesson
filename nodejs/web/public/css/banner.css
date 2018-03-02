@@ -1,0 +1,192 @@
+body {
+	font-size: 14px;
+	font-family: "微软雅黑";
+}
+
+ul li {
+	list-style: none;
+}
+/*containerStart区域*/
+#container {
+	width: 1120px;
+	background: #ccc;
+	margin: 20px auto;
+	overflow: hidden;
+}
+
+.lg,.rg{
+	margin-left:-40px;	
+}
+/*左侧*/
+
+#container .cont_left {
+	/*width: 186px;*/
+	height: 510px;
+	float: left;
+	border: 2px dashed #111;
+	overflow: hidden;
+	position: relative;
+}
+
+#container .cont_left ul li {
+	width: 186px;
+	height: 120px;
+	background: #111;
+	margin: 7px 0px;
+	position: relative;
+}
+
+#container .cont_left ul li img {
+	width: 186px;
+	height: 120px;
+}
+
+.mask {
+	width: 186px;
+	height: 120px;
+	background: rgba(1, 1, 1, 0.7);
+	position: absolute;
+	top: 0px;
+	left: -186px;
+}
+
+
+/*右侧*/
+
+#container .cont_right {
+	/*width: 186px;*/
+	height: 510px;
+	float: right;
+	border: 2px dashed #111;
+}
+
+#container .cont_right ul li {
+	width: 186px;
+	height: 120px;
+	background: pink;
+	margin: 7px 0px;
+}
+
+#container .cont_right ul li img {
+	width: 186px;
+	height: 120px;
+}
+
+.cont_right .rg li {
+	position: relative;
+	overflow: hidden;
+}
+
+.cont_right .rg li .mask2 {
+	width: 186px;
+	height: 120px;
+	position: absolute;
+	top: -120px;
+	background: rgba(1, 1, 1, 0.6);
+	z-index: 11111;
+}
+
+.cont_right .rg li:hover .mask2 {
+	border-left: 5px solid #fff;
+	transition: all 0.5s ease;
+	background: rgba(1, 1, 1, 0.6);
+	z-index: 11111;
+	top: 0px;
+	cursor: pointer;
+}
+
+
+/*中间*/
+
+#container .cont_center {
+	width: 690px;
+	height: 510px;
+	background: gray;
+	/*margin: 0px 25px;*/
+	float: left;
+	overflow: hidden;
+	position: relative;
+}
+
+#container .cont_center ul li img {
+	width: 690px;
+	height: 510px;
+}
+
+
+/*按钮*/
+
+#container .cont_center .btns {
+	width: 224px;
+	height: 10px;
+	position: absolute;
+	bottom: 10px;
+	left: 226px;
+	counter-reset: flag;
+}
+
+#container .cont_center .btns li {
+	float: left;
+	width: 20px;
+	height: 20px;
+	background: rgba(1, 1, 1, 0.5);
+	border-radius: 50%;
+	cursor: pointer;
+	color: #fff;
+	margin: 0px 4px;
+	text-align: center;
+	line-height: 20px;
+	cursor: pointer;
+}
+
+#container .cont_center .btns .selected {
+	background: green;
+}
+
+#container .cont_center .btns li:before {
+	content: counter(flag);
+	counter-increment: flag;
+}
+
+
+/*前一页*/
+
+#container .cont_center .prev {
+	position: absolute;
+	left: 0px;
+	top: 240px;
+	z-index: 2;
+	text-decoration: none;
+	font-size: 60px;
+	color: #666;
+	font-weight: bold;
+	text-align: center;
+	display: none;
+}
+
+#container .cont_center:hover .prev {
+	display: block;
+}
+
+
+/*下一页*/
+
+#container .cont_center .next {
+	position: absolute;
+	right: 0px;
+	top: 240px;
+	z-index: 2;
+	font-size: 60px;
+	color: #666;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	display: none;
+}
+
+#container .cont_center:hover .next {
+	display: block;
+}
+
+
+/*中间结束*/

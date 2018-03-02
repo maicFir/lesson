@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>翻页3</title>
+  <!--
+	2016/4/26
+	jquery改变fadeOut("slow")默认是600，改变其中slow的值：$.fx.speeds.cc = 20;
+	animate动画函数，执行完成后可以继续追加
+	delay()延迟动画加载
+    动画之间插入队列
+	queue(function(next){
+		next();让后面的动画再执行
+	})
+  jquery对象转换成js对象直接调用 var objDom = $obj.get(0)
+  -->
+  <style>
+	*{padding:0px;margin:0px;}
+	ul li{list-style:none;}
+	.wrapBox{
+		margin-top:30px;
+		position:relative;
+		/*overflow:hidden;
+			注意：父元素不能设置宽度，否则当达到最后一层时，会挡住点击层
+			     若父元素设置了宽度，则也可采取：$(".wrapBox").css("zIndex","-1000%");
+		*/
+	}
+	ul li{
+		width:600px;
+		height:400px;
+		/*background:red;*/
+		font-size:50px;
+		color:#fff;
+		line-height:400px;
+		position:absolute;
+		/*margin-left:20%;*/
+		text-align:center;
+		box-shadow:1px 2px 5px 5px #e5e5e5;
+	}
+	.turnLeft{
+		width:300px;
+		height:400px;
+		/*background:rgba(76,168,217,0.3);*/
+		position:absolute;
+		/*left: 270px;*/
+		z-index: 100;
+	}
+	.turnRight{
+		width:300px;
+		height:400px;
+		/*background:rgba(1,1,1,0.3);*/
+		position:absolute;
+		/*right:479px;*/
+		/*left:570px;*/
+		z-index:100;
+	}
+  </style>
+ </head>
+ <body>
+	<div class="wrapBox">
+		<!--left-->
+		<div class="turnLeft"></div>
+		<ul>
+			<li><img src="../../img/fanye/01.jpg"width="100%"height="auto"></li>
+			<li><img src="../../img/fanye/02.jpg"width="100%"height="auto"></li>
+			<li><img src="../../img/fanye/03.jpg"width="100%"height="auto"></li>
+			<li><img src="../../img/fanye/04.jpg"width="100%"height="auto"></li>
+			<li><img src="../../img/fanye/05.jpg"width="100%"height="auto"></li>
+			<li><img src="../../img/fanye/06.jpg"width="100%"height="auto"></li>
+		</ul>
+		<!--right-->
+		<div class="turnRight"></div>
+	</div>
+	<script type="text/javascript"src="../../js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$.fx.speeds.ani = 1000;//定义自己的延时变量
+
+			
+			var $li = $(".wrapBox").find("li");
+			var len = $li.length;//li的长度
+			var index = len;
+			var $width = $(".wrapBox").find("li").width();//获取li的宽度
+			var zindex = -1;//定义初始化的层级关系为-1
+			var wh = $(window).width();//获取窗口的宽度
+			window.onload = function(){
+			  $(".wrapBox").find("li").css("marginLeft",""+(wh-$width)/2+"px");
+			  var ofl = $(".wrapBox").find("li").get(0).offsetLeft;//获取li距离左边的距离，get(0)---将jquery对象转变成js对象
+			  $(".turnLeft").css("left",""+ofl+"px");
+			   $(".turnRight").css("left",""+(ofl+$width/2)+"px");
+			
+			}
+			// 向右翻页
+			$(".turnRight").click(right);
+			//向左翻页
+			$(".turnLeft").click(left);
+			
+			function left(){ 
+				animate(-$width);
+			}
+			//向右翻页
+			function right(){
+				animate($width);
+			}
+			//定义一个动画左右函数
+			function animate(parmes){
+			  index--;
+			  for(var i=len-1;i>=0;i--){//从下标li的下标值5开始
+				 if(index == i){
+					 index = i;//将下标值赋值给index
+				  }
+				}
+				if(index < 0){//当index减到0时，则将索引重新调到5元素位置
+					index = len -1;
+				}
+				$($li[index]).animate({"left":parmes+"px"},"ani",function(){
+					//$(this).css("zIndex",""+(zindex--)+"");
+					$($li[index]).css("zIndex",""+(zindex--)+"");//控制点击每一个li的层级关系
+					$($li[index]).find("img").css("transform","scale(0.9)");
+				}).delay(100).animate({"left":"0px"},"ani");//delay延迟0.1s
+			}
+			
+		})
+	</script>
+ </body>
+</html>
+

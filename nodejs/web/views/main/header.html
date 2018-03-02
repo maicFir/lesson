@@ -1,0 +1,24 @@
+
+<div class="barHeader container-fluid">
+    <div class="nav navbar-nav navbar-right load">
+        <li>
+            <span data-toggle="modal" data-target="#myModal" v-if="isLogoin==0"><i class="icon-user" ></i>&nbsp;登陆</span>
+            <a :href="isLogoin==1&&isAdmin?'/admin':'javascript:void(0);'" v-if="isLogoin==1">
+                <span v-html='username'></span>
+                <span v-if="isAdmin">管理员</span>
+            </a>
+            <a href="javascript:void(0);" v-on:click="loutOut" v-if="isLogoin==1">退出</a>
+        </li>
+        <li><a href="../../public/item/personCenter.html"><i class="icon-home"></i>&nbsp;个人中心</a></li>
+        <li><span id="choose">&nbsp;换肤</span></li>
+    </div>
+</div>
+
+<div class="container-fluid" style="padding:0px;margin:0px;">
+    <div class="blog text-center">
+        欢迎来到王明川的个人博客中心
+    </div>
+</div>
+<!--<div class="playMusic">
+    <i class="icon icon-music"></i>
+</div>-->

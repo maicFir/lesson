@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>attr回调</title>
+  <style>
+	/*************
+		corpRight@chuanchuan
+		time:2016/6/13
+		project:实现jquery中attr的回调函数动态操作box的Dom
+	**************
+	*/
+	*{padding:0px;margin:0px;}
+	.box{width:100px;height:100px;border:1px solid #ccc;margin:10px;word-wrap:break-word;text-align:center;}
+	.add{margin:20px;padding:10px 0;border:1px solid #ccc;outline:none;border-radius:5px;}
+	.add:active{background:#3494CE;}
+	.w,.h{margin:10px;}
+	#bgBtn{
+		padding:10px 0;border-radius:5px;
+		outline:none;
+		margin:10px;
+		border:1px solid #ccc;
+		cursor:pointer;
+	}
+  </style>
+ </head>
+ <body>
+	<form method="get"action="">
+		<div class="box"></div>
+		<input type="button"value="每点击一次宽度增加10px"class="add">
+		<hr/>
+		<p class="w">长：<input type="text"name="w"oninput="item.changeValue(this.form)"maxlength="60"><span class="wText"></span></p>
+		<p class="h">宽：<input type="text"name="h"oninput="item.changeValue(this.form)"maxlength="60"><span class="hText"></span></p>
+		<p><input type="button"value="随机切换背景"id="bgBtn"/></p>
+	</form>
+	<script type="text/javascript"src="js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var $w = 100,$h = 100;//定义默认初始宽度和高度的增量
+			$(".add").on("click",function(){
+				$w+=10;//定义宽度和高度的增量10
+				$h+=10;
+				$(this).prev().attr("style",function(w,h){
+					w = "width"+":"+$w+"px";
+					h = "height:"+$h+"px";
+					$(this).html("<P>"+w+"</P><p>"+h+"</p>");
+					return ""+w+""+";"+h+"";
+				});
+			})
+		});
+		//改变input中的值对应改变box中的宽度和高度
+		var boxDom = document.querySelector(".box");
+		var wText = document.getElementsByClassName("wText")[0];//获取显示宽度
+		var hText = document.getElementsByClassName("hText")[0];//获取显示高度
+		var bgBtn = document.getElementById("bgBtn");
+		var item = {
+			//改变box宽度和高度的值
+			changeValue:function(obj){
+				var wValue = obj.w.value;
+				var hValue = obj.h.value;
+				boxDom.style.width = wValue+"px";//宽度
+				boxDom.style.height = hValue+"px";//高度
+				wText.innerText = obj.w.value;
+				hText.innerText = obj.h.value;
+				if(wValue>60){
+					wText.innerText = "您输入的值过大，请输入小于60氛围以内的值";
+					wText.style.color = "red";
+				}else if(hValue>60){
+					hText.innerText = "您输入的值过大，请输入小于60氛围以内的值";
+					hText.style.color = "red";
+				}
+			},
+			//切换背景
+			changeBg:function(){
+				var r = Math.floor(Math.random()*256);
+				var g = Math.floor(Math.random()*256);
+				var b = Math.floor(Math.random()*256);
+				return "rgb("+r+","+g+","+b+")";
+			}
+		};
+		//点击按钮切换背景颜色
+		bgBtn.addEventListener("click",function(){
+			boxDom.style.backgroundColor = item.changeBg();
+		},false);
+	</script>
+ </body>
+</html>

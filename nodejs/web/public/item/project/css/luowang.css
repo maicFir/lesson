@@ -1,0 +1,507 @@
+
+ * {
+ 	padding: 0px;
+ 	margin: 0px;
+ }
+ 
+ ul,
+ li {
+ 	list-style: none;
+ 	list-style-image: none;
+ }
+ 
+ a {
+ 	text-decoration: none;
+ }
+ 
+ body {
+ 	font-size: 16px;
+ 	font-family: "å¾®è½¯é›…é»‘";
+ 	overflow-x: hidden;
+ }
+ 
+ body img {
+ 	border: none;
+ }
+ /*å¤´éƒ¨*/
+ 
+ #top {
+ 	height: 52px;
+ 	background: #F2F2F2;
+ }
+ 
+ #top .header {
+ 	width: 960px;
+ 	height: 52px;
+ 	margin: 0 auto;
+ 	line-height: 52px;
+ 	position: relative;
+ }
+ 
+ #top .header .logo {
+ 	width: 42px;
+ 	height: 52px;
+ 	background-image: url("../image/luowang/luowang.png");
+ 	background-position: 1px -293px;
+ 	display: block;
+ 	float: left;
+ }
+ 
+ #top .header .h_l {
+ 	width: 360px;
+ 	height: 100%;
+ 	float: left;
+ }
+ 
+ #top .header .h_l li a {
+ 	color: #111;
+ }
+ 
+ #top .header .h_l li a:hover {
+ 	color: #D45224
+ }
+ 
+ #top .header li {
+ 	float: left;
+ 	padding: 2px 20px;
+ }
+ 
+ #top .header .input {
+ 	height: 24px;
+ 	width: 146px;
+ 	border-radius: 12px;
+ 	border: none;
+ 	margin-top: 13px;
+ 	text-indent: 1.5em;
+ 	color: #ccc;
+ 	font-size: 12px;
+ }
+ 
+ #top .header .input:hover {
+ 	box-shadow: 0px 0px 5px solid #4C9ED9;
+ }
+ 
+ #top .header .icn {
+ 	position: relative;
+ 	top: 2px;
+ 	left: -145px;
+ }
+ 
+ #top .header .h_r {
+ 	width: 80px;
+ 	height: 100%;
+ 	float: right;
+ 	text-align: center;
+ }
+ 
+ #top .header .h_r a {
+ 	font-size: 14px;
+ 	color: #111;
+ }
+ 
+ #top .header .h_r a:hover {
+ 	color: #FF2424;
+ 	transition: all 0.5s ease;
+ }
+ /*banneråŒºåŸŸ*/
+ 
+ #banner {
+ 	width: 960px;
+ 	height: 210px;
+ 	margin: 30px auto;
+ 	overflow: hidden;
+ 	position: relative;
+ }
+ 
+ #banner img {
+ 	width: 960px;
+ 	height: 210px;
+ 	float: left;
+ }
+ 
+ #banner .iconfont {
+ 	font-size: 30px;
+ 	color: #ee6666
+ }
+ 
+ #banner .prev {
+ 	position: absolute;
+ 	top: 90px;
+ 	left: 0px;
+ 	z-index: 5
+ }
+ 
+ #banner .next {
+ 	position: absolute;
+ 	top: 90px;
+ 	right: 0px;
+ 	z-index: 5
+ }
+ 
+ #banner .slide {
+ 	width: 1000%;
+ 	height: 210px;
+ 	position: absolute;
+ 	z-index: 2;
+ }
+ 
+ #banner .slide li {
+ 	width: 960px;
+ 	height: 210px;
+ 	float: left;
+ }
+ /*æ ‡é¢˜æ */
+ 
+ #title {
+ 	width: 960px;
+ 	height: 50px;
+ 	margin: 0 auto;
+ }
+ 
+ #title .t_l {
+ 	width: 300px;
+ 	height: 100%;
+ 	float: left;
+ 	line-height: 50px;
+ }
+ 
+ #title .t_l p {
+ 	width: 5px;
+ 	height: 50px;
+ 	background: red;
+ 	float: left
+ }
+ 
+ #title .t_l h1 {
+ 	float: left;
+ }
+ 
+ #title .t_r {
+ 	width: 660px;
+ 	height: 50px;
+ 	float: right;
+ 	line-height: 48px;
+ }
+ 
+ #title .t_r ul {
+ 	height: 50px;
+ 	width: 500px;
+ 	float: right
+ }
+ 
+ #title .t_r li {
+ 	float: left;
+ 	padding: 8px;
+ 	font-size: 13px;
+ }
+ 
+ #title .t_r li a {
+ 	color: #999
+ }
+ 
+ #title .t_r li a:hover {
+ 	transition: all 0.1s ease;
+ 	color: #D45224
+ }
+ /*contentåŒºåŸŸ*/
+ 
+ #content {
+ 	width: 960px;
+ 	height: 486px;
+ 	margin: 10px auto;
+ 	font-style: normal;
+ }
+ 
+ #content .c_l {
+ 	width: 640px;
+ 	height: 480px;
+ 	border-radius: 5px;
+ 	float: left
+ }
+ 
+ #content .c_l img {
+ 	border-radius: 5px;
+ 	transition: all 0.5s ease;
+ }
+ 
+ #content .c_l img:hover {
+ 	border: 5px dashed #7E3A25;
+ 	transform: translatex(5px);
+ 	transition: all 0.5s ease;
+ }
+ 
+ #content .c_r {
+ 	width: 303px;
+ 	height: 480px;
+ 	border-radius: 5px;
+ 	float: right
+ }
+ 
+ #content .c_r p .m1,
+ .m2 {
+ 	width: 303px;
+ 	height: 211px;
+ }
+ 
+ #content .c_r .m1 img {
+ 	max-width: 100%;
+ 	border-radius: 5px;
+ 	transition: all 0.5s ease;
+ }
+ 
+ #content .c_r .m1 img:hover {
+ 	transform: scale(0.9);
+ 	transition: all 0.5s ease;
+ }
+ 
+ #content .c_r .m2 img {
+ 	max-width: 100%;
+ 	border-radius: 5px;
+ 	transition: all 0.5s ease;
+ }
+ 
+ #content .c_r .m2 img:hover {
+ 	transform: scale(0.9);
+ 	transition: all 0.5s ease;
+ }
+ /*music*/
+ 
+ #music {
+ 	width: 960px;
+ 	height: 384px;
+ 	margin: 60px auto;
+ 	font-style: normal;
+ }
+ 
+ #music .music_l {
+ 	width: 450px;
+ 	float: left;
+ }
+ 
+ #music .music_r {
+ 	width: 450px;
+ 	float: right;
+ }
+ 
+ #music .music_l h1 {
+ 	padding: 5px;
+ }
+ 
+ #music .music_l h1:hover {
+ 	text-decoration: underline;
+ 	color: #D45224;
+ 	cursor: pointer;
+ }
+ 
+ #music .music_l img {
+ 	width: 164px;
+ 	height: 164px;
+ 	border-radius: 164px;
+ 	float: left;
+ }
+ 
+ #music .music_l img:hover {
+ 	transform: rotate(3600deg);
+ 	transition: all 0.5s ease;
+ }
+ 
+ #music .music_l .name {
+ 	height: 150px;
+ 	width: 220px;
+ 	margin-top: 10px;
+ 	float: right;
+ }
+ 
+ #music .music_l .name .n1 {
+ 	color: #111;
+ 	font-size: 16px;
+ 	font-family: "å¾®è½¯é›…é»‘";
+ 	padding: 2px;
+ }
+ 
+ #music .music_l .name h2 {
+ 	color: #111;
+ }
+ 
+ #music .music_l .name h2:hover {
+ 	color: #D45224
+ }
+ 
+ #music .music_l .name .time {
+ 	margin-right: 0px;
+ 	margin-top: 70px;
+ 	font-size: 15px;
+ 	float: right
+ }
+ 
+ #music .music_l .about {
+ 	height: 160px;
+ 	width: 100%;
+ 	clear: both;
+ }
+ 
+ #music .music_l .about .text {
+ 	text-align: justify;
+ 	color: #111;
+ 	font-family: "å¾®è½¯é›…é»‘"font-size: 13px;
+ 	text-indent: 1em;
+ 	line-height: 22px;
+ }
+ 
+ #music .music_r img {
+ 	width: 198px;
+ 	height: 161px;
+ 	float: left;
+ 	margin-left: 20px;
+ 	border-radius: 5px;
+ 	transition: all 0.5s ease;
+ }
+ 
+ #music .music_r img:hover {
+ 	transform: translatex(5px);
+ 	transition: all 0.5s ease;
+ }
+ 
+ #music .music_r .s_l,
+ .s_r {
+ 	width: 196px;
+ 	height: 100px;
+ 	float: left;
+ 	margin-top: 20px;
+ 	margin-left: 22px;
+ 	border-radius: 5px;
+ }
+ /*hot_active*/
+ 
+ #hot_active {
+ 	width: 1040px;
+ 	height: 540px;
+ 	margin: 20px auto;
+ 	font-style: normal;
+ }
+ 
+ #hot_active ul {
+ 	width: 336px;
+ 	height: 190px;
+ 	float: left;
+ 	margin: 5px 5px;
+ }
+ 
+ #hot_active li img {
+ 	height: 190px;
+ 	width: 132px;
+ 	float: left;
+ 	display: block;
+ 	border-radius: 4px;
+ }
+ 
+ #hot_active li .t1 {
+ 	height: 190px;
+ 	width: 195px;
+ 	float: right
+ }
+ 
+ #hot_active li .t1 .team {
+ 	width: 185px;
+ 	height: 80px;
+ 	padding: 5px;
+ }
+ 
+ #hot_active li .t1 .team a {
+ 	color: #111;
+ }
+ 
+ #hot_active li .t1 .team a:hover {
+ 	color: #D45224
+ }
+ 
+ #hot_active li .t1 .adderss {
+ 	margin-top: 10px;
+ }
+ /*footéƒ¨åˆ†*/
+ 
+ #foot {
+ 	height: 252px;
+ 	background: #222;
+ 	font-style: normal;
+ 	display: -webkit-box;
+ 	-webkit-box-pack: c;
+ }
+ 
+ #foot ul {
+ 	/* height: 120px; */
+ 	/* width: 300px; */
+ 	/* float: left; */
+ 	/* padding: 60px 20px; */
+ 	margin-left: 20px;
+ 	/* text-align: center; */
+ 	color: #fff;
+ 	flex: 1;
+ 	-webkit-box-flex: 1;
+ 	text-align: center;
+ }
+ 
+ #foot ul li a {
+ 	color: #fff;
+ }
+ 
+ #foot ul li a:hover {
+ 	color: #FF2424
+ }
+ 
+ #foot ul li {
+ 	line-height: 30px;
+ }
+ 
+ #foot .information {
+ 	height: 180px;
+ 	/* width: 240px; */
+ 	/* float: right; */ */
+ 	/* margin: 30px 150px; */
+ 	flex: 1;
+ 	-webkit-box-flex: 1;
+ 	text-align: center;
+ }
+ 
+ #foot .information .focus {
+ 	margin-left: 30px;
+ 	color: #fff;
+ }
+ 
+ #foot .information .icon {
+ 	width: 135px;
+ 	height: 555px;
+ 	display: block;
+ 	background-image: url("../image/luowang/luowang.png");
+ 	float: left;
+ }
+ 
+ #foot .information .qq {
+ 	height: 30px;
+ 	width: 30px;
+ 	background-position: 1650px 48px;
+ }
+ 
+ #foot .information .weixin {
+ 	height: 35px;
+ 	width: 37px;
+ 	background-position: 9px 295px;
+ }
+ 
+ #foot .information .xinlang {
+ 	height: 30px;
+ 	width: 29px;
+ 	background-position: 164px 77px;
+ }
+ 
+ #foot .information .douhu {
+ 	height: 30px;
+ 	width: 30px;
+ 	background-position: 30px 106px;
+ }
+ 
+ #foot .information .biaoyu {
+ 	height: 29px;
+ 	width: 137px;
+ 	background-position: 0px 0px;
+ }

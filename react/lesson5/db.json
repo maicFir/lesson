@@ -1,0 +1,59 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "data": {
+	"prizeData":[
+		{
+		   "id":"1",
+		   "time":"2017-02-28",
+		   "joinNum":"12987",
+		   "prizeNum":"23",
+		   "winPro":"1%",
+		   "jifen":"2w:3w",
+		   "status":"未发放",
+		   "isStatus":"0",
+		   "luckStatus":"进行中",
+		   "isluckStatus":"0",
+		   "effectStatus":"有效",
+		   "iseffect":"0",
+		   "options":"发奖"
+		 },
+		{  "id":"2",
+		   "time":"2017-01-28",
+		   "joinNum":"12987",
+		   "prizeNum":"23",
+		   "winPro":"1%",
+		   "jifen":"2w:3w",
+		   "status":"未发放",
+		   "isStatus":"1",
+		   "luckStatus":"进行中",
+		   "isluckStatus":"1",
+		   "effectStatus":"有效",
+		   "iseffect":"0",
+		   "options":"发奖"
+		 },
+		{"id":"3","time":"2014-03-28","joinNum":"12987","prizeNum":"23","winPro":"2%","jifen":"2w:3w","status":"未发放","isStatus":"1","luckStatus":"进行中","isluckStatus":"0","effectStatus":"有效","iseffect":"0","options":"发奖"},
+		{"id":"4","time":"2015-04-28","joinNum":"12987","prizeNum":"23","winPro":"3%","jifen":"2w:3w","status":"未发放","isStatus":"0","luckStatus":"进行中","isluckStatus":"1","effectStatus":"有效","iseffect":"0","options":"发奖"},
+		{"id":"5","time":"2016-02-28","joinNum":"12987","prizeNum":"23","winPro":"1%","jifen":"2w:3w","status":"未发放","isStatus":"1","luckStatus":"进行中","isluckStatus":"0","effectStatus":"有效","iseffect":"1","options":"发奖"},
+		{"id":"6","time":"2017-02-28","joinNum":"12987","prizeNum":"23","winPro":"4%","jifen":"2w:3w","status":"未发放","isStatus":"0","luckStatus":"进行中","isluckStatus":"1","effectStatus":"有效","iseffect":"1","options":"发奖"},
+		{"id":"7","time":"2013-02-28","joinNum":"12987","prizeNum":"23","winPro":"4%","jifen":"2w:3w","status":"未发放","isStatus":"1","luckStatus":"进行中","isluckStatus":"0","effectStatus":"有效","iseffect":"1","options":"发奖"},
+		{"id":"8","time":"2010-02-28","joinNum":"12987","prizeNum":"23","winPro":"1%","jifen":"2w:3w","status":"未发放","isStatus":"0","luckStatus":"进行中","isluckStatus":"1","effectStatus":"有效","iseffect":"1","options":"发奖"},
+		{"id":"9","time":"2012-02-28","joinNum":"12987","prizeNum":"23","winPro":"7%","jifen":"2w:3w","status":"未发放","isStatus":"1","luckStatus":"进行中","isluckStatus":"0","effectStatus":"有效","iseffect":"1","options":"发奖"}
+	 ],
+	 "size":5,
+	 "total":10,
+	 "page":9
+
+  },
+  
+  "profile": {
+    "name": "typicode"
+  }
+}
+
+

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>天空飘朵云</title>
+	<!--
+	   2015/9/21@chuanchuan
+	   ---------------
+	   linear-gradient(red,blue)---一个元素没有加高度，线性背景不会有作用
+
+	  动画：@keyframes play{
+				0%{}
+				20%{}
+				50%{}
+				100%{}
+	        }
+	        .c1{animation:play 0.5s ease infinity;}
+			  
+	
+	-->
+	<style>
+		*{padding:0px;margin:0px;}
+		/*天空*/
+		.sky{background:linear-gradient(#DB721A 20%,#FE9722 30%,#4976BD 50%);padding:500px 0px;overflow:hidden;}
+		/*云朵*/
+		.sky .clound{width:200px;height:60px;background:#fff;position:relative;top:-300px;left:0px;border-radius:200px;float:left;}
+		.sky .clound:after,.clound:before{
+			content:"";width:100px;height:80px;position:absolute;border-radius:100px;background:#fff;top:-30px;left:40px;	
+		}
+		.sky .clound:before{content:"";width:100px;height:80px;position:absolute;top:-4px;left:0px;background:#fff;
+		border-radius:100px;transform:rotate(6deg);}
+
+		.sky .c1:after,.clound:before{
+			content:"";width:100px;height:80px;position:absolute;border-radius:100px;background:#fff;top:-30px;left:40px;
+		}
+		.sky .c1:before{content:"";width:100px;height:80px;position:absolute;top:0px;left:0px;background:#fff;
+		border-radius:100px;transform:rotate(6deg);}
+		.sky .c2:after,.clound:before{
+			content:"";width:100px;height:80px;position:absolute;border-radius:100px;background:#fff;top:-30px;left:83px;
+		}
+		.sky .c2:before{content:"";width:100px;height:80px;position:absolute;top:-3px;left:0px;background:#fff;
+		border-radius:100px;transform:rotate(9deg);}
+		.sky .c3:after,.clound:before{
+			content:"";width:100px;height:80px;position:absolute;border-radius:100px;background:#fff;top:-30px;left:40px;
+		}
+		.sky .c3:before{content:"";width:100px;height:80px;position:absolute;top:0px;left:0px;background:#fff;
+		border-radius:100px;transform:rotate(6deg);}
+		.sky .c4:after,.clound:before{
+			content:"";width:100px;height:80px;position:absolute;border-radius:100px;background:#fff;top:-30px;left:40px;
+		}
+		.sky .c4:before{content:"";width:100px;height:80px;position:absolute;top:0px;left:0px;background:#fff;
+		border-radius:100px;transform:rotate(6deg);}
+	
+		/*太阳*/
+		.sun{width:100px;height:100px;background:red;border-radius:50%;box-shadow:0px 0px 5px 5px yellow;position:relative;top:-500px;right:-1000px;}
+		/*动画*/
+		@keyframes play{
+			0%{transform:translatex(0px)}
+			20%{transform:translatex(20px)}
+			40%{transform:translatex(60px)}
+			60%{transform:translatex(660px)}
+			100%{transform:translatex(1000px)}
+		}
+		.c1{animation:play 5s ease infinite;}
+		.c2{animation:play 10s ease infinite;}
+		.c3{animation:play 15s ease infinite;}
+		.c4{animation:play 20s ease infinite;}
+		
+	</style>
+ </head>
+ <body>
+	<div class="sky">
+		<div class="clound c1"></div>
+		<div class="clound c2"></div>
+		<div class="clound c3"></div>
+		<div class="clound c4"></div>
+		<div class="sun"></div>
+	</div>
+	
+ </body>
+</html>

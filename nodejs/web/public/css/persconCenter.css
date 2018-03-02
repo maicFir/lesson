@@ -1,0 +1,131 @@
+/*
+ 	个人中心.css@chuanchaun
+ * */
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+html {
+	font-size: 62.5%;
+	font-family: "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+body {
+	background: linear-gradient(0deg, #e5e5e5 1%, #333 50%, #333 80%)no-repeat;
+}
+
+ul li {
+	list-style: none;
+	color: #fff;
+}
+
+.cnt {
+	max-width: 640px;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	margin: 10px auto;
+	box-shadow: 2px 3px 5px 5px #fff;
+}
+
+.swiper-slide {
+	width: 100%;
+	text-align: center;
+	overflow: auto;
+}
+
+.swiper-slide img {
+	margin-top: 4rem;
+	border-radius: 80%;
+	border: 5px solid #4694F7;
+}
+
+.u1 .author_name {
+	font-size: 30px;
+	font-weight: bold;
+	color: #fff;
+	margin: 1em 0;
+	letter-spacing: .1em;
+}
+
+.u1 li {
+	font-size: 16px;
+	line-height: 25px;
+}
+
+.net {
+	color: #fff;
+}
+
+.u2 {
+	position: relative;
+	overflow: hidden;
+}
+
+.skill h2 {
+	font-size: 30px;
+	font-weight: bold;
+	color: #fff;
+	margin: 1em 0;
+	letter-spacing: .1em;
+}
+
+.u2 li {
+	font-size: 18px;
+	line-height: 20px;
+	margin: 60px 0px;
+	position: relative;
+}
+
+.h5 {
+	right: 30px;
+}
+
+.bootstrap {
+	left: 30px;
+}
+
+.jquery {
+	right: 30px;
+}
+
+.swiper-slide-active {
+	max-height: 415px;
+}
+
+.u3 li {
+	font-size: 16px;
+    line-height: 20px;
+}
+
+.expercise {
+	margin-top: 3rem;
+}
+
+.u3 li:not(.expercise) {
+	margin: 30px 0px;
+	text-align: initial;
+	padding-left: 30px;
+}
+
+.about h2 {
+	font-size: 30px;
+	font-weight: bold;
+	color: #fff;
+	margin: 1em 0;
+	letter-spacing: .1em;
+}
+
+.u4:not(.about) {
+	text-align: initial;
+}
+
+.u4 li {
+	padding-left: 10px;
+	word-wrap: break-word;
+	font-size: 16px;
+	line-height: 30px;
+	overflow: auto;
+	text-indent: 2rem;
+}

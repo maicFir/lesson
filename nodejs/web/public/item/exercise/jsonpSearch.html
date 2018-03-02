@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>jsonp实现跨域请求</title>
+<style>
+/*
+ **************
+ cropRight:chuanchuan
+ time:2016/5/19
+ project:利用script加载实现跨域请求
+ 
+ ***************
+*/
+#search {width: 300px; height: 30px; padding: 5px; border:1px solid #f90; font-size: 16px;}
+#cnt {border:1px solid #f90; width: 310px; margin: 0;padding: 0;}
+li a { line-height: 30px; padding: 5px; text-decoration: none; color: black; display: block;}
+li a:hover{ background: #f90; color: white; }
+</style>
+
+</head>
+
+<body>
+	<input type="text" id="search"placeholder="请输入搜索内容" />
+	<ul id="cnt"></ul>
+	<script type="text/javascript">
+		//定义一个接口中请求的cb = fn()的方法，请求地址中的数据格式必须是fn({})方式
+	    function fn(data){
+	    	var cntDom = document.getElementById("cnt");
+	    	var json = data.s;//查询的内容
+	    	var html ='';
+	    	if(json.length){
+	    		cntDom.style.display="block";
+	    		for(var i=0;i<json.length;i++){
+		    		html+="<li><a href='https://www.baidu.com/s?wd="+json[i]+"'target='_blank'>"+json[i]+"</a></li>";
+		    	}
+		    	cntDom.innerHTML=html;
+	    	}else{
+	    		cntDom.style.block = "none";
+	    	}
+	    }
+		window.onload = function(){
+			var serchDom = document.getElementById("search");
+			var cntDom = document.getElementById("cnt");
+			var flag = false;
+			serchDom.oninput = function(){
+				var val = this.value;
+				flag = !flag;
+				if(val!=''&flag){
+					var scriptDom = document.createElement("script");//创建script标签
+					scriptDom.src= "https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd="+val+"&cb=fn";//加载src接口地址
+					document.body.appendChild(scriptDom);//将script追加到body中去
+				}else{
+					cntDom.style.display="none";
+				}
+				
+				
+			}
+			
+		}
+	
+	
+	
+	</script>
+</body>
+</html>

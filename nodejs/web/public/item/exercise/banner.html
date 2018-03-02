@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>banner轮播</title>
+		<link rel="stylesheet" type="text/css" href="../../css/banner.css"/>
+		<style type="text/css">
+			.header {
+				overflow: hidden;
+				margin: 10px auto;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+			<h1>轮播图</h1>
+		</div>
+		<!--containerStart-->
+		<div id="container">
+			<!--左边内容区域-->
+			<div class="cont_left">
+				<ul class="lg">
+					<li>
+						<img src="../../img/01.png"/>
+						<a href="#" target="_blank" title="html5标签的认识">
+							<div class="mask">
+								<p style="color:#fff;text-align:center;line-height:120px;">html5标签的认识</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<img src="../../img/02.png" />
+						<a href="#" target="_blank" title="关于线性背景">
+							<div class="mask">
+								<p style="color:#fff;text-align:center;line-height:120px;word-wrap: break-word;">关于线性背景linear-gradient的认识</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<img src="../../img/03.png" />
+						<a href="#" target="_blank" title="box-shadow的妙用">
+							<div class="mask">
+								<p style="color:#fff;text-align:center;line-height:120px;">box-shadow的妙用</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<img src="../../img/04.png" />
+						<a href="#" target="_blank" title="关于audio标签">
+							<div class="mask">
+								<p style="color:#fff;text-align:center;line-height:120px;">关于audio标签</p>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!--左边内容结束-->
+			<div class="cont_center">
+				<ul class="banner">
+					<li><img src="../../img/01.png" /></li>
+					<li><img src="../../img/02.png" /></li>
+					<li><img src="../../img/03.png" /></li>
+					<li><img src="../../img/04.png" /></li>
+					<li><img src="../../img/05.png" /></li>
+					<li><img src="../../img/06.png" /></li>
+					<li><img src="../../img/07.png" /></li>
+					<li><img src="../../img/08.png" /></li>
+				</ul>
+				<!--小按钮-->
+				<ul class="btns">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<!--左右方向键-->
+				<a href="javascript:void(0)" class="prev"><i class="icon-chevron-left icon-1x"></i></a>
+				<a href="javascript:void(0)" class="next"><i class="icon-chevron-right icon-1x"></i></a>
+			</div>
+			<!--中间结束部分-->
+			<!--右边部分-->
+			<div class="cont_right">
+				<ul class="rg">
+					<li>
+						<img src="../../img/05.png" />
+						<a href="#" target="_blank" title="xxxx">
+							<p class="mask2"></p>
+						</a>
+					</li>
+					<li>
+						<img src="../../img/06.png" />
+						<a href="#" target="_blank" title="xxxx">
+							<p class="mask2"></p>
+						</a>
+					</li>
+					<li>
+						<img src="../../img/07.png" />
+						<p class="mask2"></p>
+					</li>
+					<li>
+						<img src="../../img/08.png" />
+						<p class="mask2"></p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--containerEnd-->
+		<script type="text/javascript" src="../../js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript">
+			//轮播图首页banner_js代码
+			$(function() {
+				var index = 0; //索引
+				$("#container").find(".btns>li").click(function() {
+					var _index = $(this).index();
+					index = _index; //将索引值赋给全局变量index;
+					$(this).addClass("selected").siblings().removeClass("selected")
+					$("#container").find(".cont_center .banner").find("li").eq(index).fadeIn("slow").siblings().hide();
+				});
+				/*上一页*/
+				$("#container").find(".prev").click(function() {
+					index--;
+					var len = $("#container").find(".cont_center .banner li").length; //获取li的长度
+					if (index < 0) { //当上一页减到0时，index索引到最大值
+						index = len - 1;
+					}
+					$("#container").find(".cont_center .banner").find("li").eq(index).fadeIn().siblings().hide();
+					$(".btns").find("li").eq(index).addClass("selected").siblings().removeClass("selected");
+				});
+				/*下一页*/
+				$("#container").find(".next").click(function() {
+					index++;
+					var len = $("#container").find(".cont_center .banner li").length; //获取li的长度
+					if (index >= len) { //下一页大于最大长度时，索引就变成0
+						index = 0;
+					}
+					$("#container").find(".cont_center .banner").find("li").eq(index).fadeIn().siblings().hide(); //
+					$(".btns").find("li").eq(index).addClass("selected").siblings().removeClass("selected");
+				});
+				//自动播放
+				function autoPlay() {
+					index++;
+					var len = $("#container").find(".cont_center .banner li").length; //获取li的长度
+					if (index >= len) { //下一页大于最大长度时，索引就变成0
+						index = 0;
+					}
+					$("#container").find(".cont_center .banner").find("li").eq(index).fadeIn().siblings().hide(); //
+					$(".btns").find("li").eq(index).addClass("selected").siblings().removeClass("selected");
+				};
+				autoPlay(); //调用
+				var setTimes = setInterval(autoPlay, 2000); //定时
+				$(".prev,.next").hover(function() {
+					clearInterval(setTimes); //清除动画
+				}, function() {
+					setTimes = setInterval(autoPlay, 2000);
+				});
+				//左侧轮播图上下自动切换
+				function playLeft() {
+					$("#container").find(".cont_left").find(".lg").prepend($(".lg li:last"));
+					$("#container").find(".cont_left").find(".lg").css("top", "0px");
+					$("#container").find(".cont_left").find(".lg").animate({
+						"top": "-120px"
+					}, 2000);
+				}
+				playLeft();
+				var setTime = setInterval(playLeft, 2000);
+				$(".lg li>img").hover(function() {
+					clearInterval(setTime);
+				}, function() {
+					setTime = setInterval(playLeft, 2000);
+				});
+				//右侧
+				$(".rg").find("li>img").hover(function() {
+					clearInterval(setTimes);
+					var imgs = $(this).attr("src");
+					var targetImg = $(".banner").find("li>img").attr("src", imgs.src);
+				}, function() {
+					setTimes = setInterval(autoPlay, 2000);
+				});
+				//下标切换
+				$("#navBox").find(".nav_list>ul>li").click(function() {
+					$("#navBox").find(".nav_list>ul>li>.trangle").hide();
+					$(this).find(".trangle").show();
+				});
+				//左侧阴影层遮罩
+				$(".cont_left").find("li").hover(function() {
+					$(this).find(".mask").css("left", "0px");
+				}, function() {
+					$(this).find(".mask").css("left", "-186px");
+				});
+			})
+		</script>
+	</body>
+
+</html>

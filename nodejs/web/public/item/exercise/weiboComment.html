@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>微博评论</title>
+  <!--2016/5/14
+			onfocus -----获取焦点事件
+			oninput------连续触发
+			onchnage-----只触发一次
+  
+  
+  -->
+  <style>
+	*{padding:0px;margin:0px;}
+	body{font-size:14px;background:url("../../img/weiboComment/body_bg.jpg")no-repeat top center;background-size:cover;}
+	#remakArea{
+		width:560px;
+		height:216px;
+		margin:10px auto;
+		border:none;
+		/*border:1px solid #ccc;*/
+	}
+	#remakArea p{float:right;padding:10px 5px;}
+	#info{color:#fff;}
+	/*cols="65"rows="5"*/
+	#textarea{
+		width:530px;
+		height:120px;
+		margin:5px 10px;
+		outline:none;
+		padding:5px;
+	}
+	.sbtn{margin-right:10px;}
+	#subBtn{padding:5px 10px;background-color:#ccc;text-decoration:none;border-radius:5px;color:#fff;}
+  </style>
+ </head>
+ <body>
+	<div id="remakArea">
+		<p id="info">海南三亚规划信息中心现天价打印，一张A4纸至少收费50元　热门微博</p>
+		<textarea id="textarea"placeholder="请输入微博内容..."></textarea>
+		<p class="sbtn"><a href="javascript:void(0);"id="subBtn">发布</a></p>
+	</div>
+	<script type="text/javascript">
+		(function(){
+			var txtDom = document.getElementById("textarea");
+			var infoDom = document.getElementById("info");
+			var subDom = document.getElementById("subBtn");
+			var flag = true;
+			var ie = !-[1,];//检测浏览器是否是ie
+			var timer = null;
+			//获取焦点时
+			txtDom.onfocus = function(){
+				if(flag){
+					this.style.border = "1px solid #FFC09F";
+					infoDom.innerHTML = "<span class='num'>还可以输入140个字</span>";
+					flag = false;
+				}
+				
+			};
+			//失去焦点触发
+			txtDom.onblur = function(){
+				if(this.value ==""){
+					this.style.border ="1px solid #ccc";
+					infoDom.innerHTML = "<span>海南三亚规划信息中心现天价打印，一张A4纸至少收费50元　热门微博</span>";
+					flag = true;
+				}
+				
+			};
+			//兼容ie
+			if(ie){
+				txtDom.propertychage = change;
+			}else{
+				txtDom.oninput = change;
+			};
+
+			function change(){
+				var num = Math.ceil(getLength(txtDom.value)/2);
+				var numDom = document.getElementsByClassName("num")[0];
+				if(!numDom){return};
+
+				if(num<=140){
+					numDom.innerHTML= "还可以输入"+(140-num)+"个字";
+					numDom.style.color = "#fff";
+				}else{
+					numDom.innerHTML = "你已超出"+(num-140)+"个字";
+					numDom.style.color = "red";
+				};
+				//当文本框为空时，则按钮不可编辑
+				if(txtDom.value ==''||num>140){
+					//subDom.style.disable = "disabled";
+					subDom.style.background = "#ccc";
+				}else{
+					subDom.style.background = "#FFC09F";
+				}
+			};
+			//中文字符两个字节，英文字符一个字节
+			function getLength(str){
+				//return String(str).replace(/[^\x00-\xff]/g,"aa").length;//如果是中文，则转换成两个字符aa
+				return String(str).replace(/[^\x00-\xff]/g,'aa').length;
+			};
+
+			//信息发布
+			var i =0;
+			subDom.onclick = function(){
+				var color = this.style.backgroundColor;
+				if(color!="#ccc"){
+					clearInterval(timer);
+					timer = setInterval(function(){
+						if(i == 3){
+							clearInterval(timer);
+							i = 0;
+						}else{
+							i++;
+						};
+						if(i%2){
+							txtDom.style.backgroundColor = "rgba(255,37,37,.8)";
+						}else{
+							txtDom.style.backgroundColor = "";
+						}
+					
+					},100)
+				}else{
+					alert("发布成功！");
+				}
+			};
+			//本地存储
+			var local = window.localStorage;
+			var text_cntDom = document.getElementsByClassName("text_cnt")[0];
+			txtDom.onkeydown = function(){
+				var val = txtDom.value;
+				if(local){
+					 localStorage.setItem("cnt",val);
+				}else{
+					alert("你的浏览器不支持sessionStorage");
+				};
+				
+			  };
+			  //取值
+			  if(local){
+					var val = localStorage.getItem("cnt");//获取存储值
+					txtDom.value = val;
+				}
+			
+
+		})()
+	
+	</script>
+ </body>
+</html>

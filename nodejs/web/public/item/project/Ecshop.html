@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Ecshop模板课堂</title>
+  <link type="text/css" href="css/moban.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/font/iconfont.css">
+ </head>
+ <body>
+    <!--Start_header
+	-->
+    <div id="header">
+	 <div class="container">
+		  <div class="hl"><a href="http://www.ecmoban.com"target="_blank" title="ecshop模板"><img src="http://www.ecmoban.com/content/themes/ecmoban2014/images/logo.png" alt="ecshop ecshop模板 ecshop插件"></a></div>
+		  <div class="hr">
+		    <div class="box">
+				 <input type="text"placeholder="请输入关键字搜索">
+				 <div class="search">
+				 <a href="#"><i class="iconfont">&#xf00a8;</i></a>
+				 </div>
+			 </div>
+			 <div class="register">
+				<ul>
+					<li><i class="iconfont">&#xe632;</i><br><span>登录</span></li>
+					<li><i class="iconfont">&#xe629;</i><br><span>提问</span></li>
+					<li><i class="iconfont">&#xe65f;</i><br><span>二维码</span></li>		
+				</ul>
+			 </div>
+		  </div>
+     </div>
+	</div><!--end_header-->
+	
+	<!--start_body-->
+	<div id="slider">
+		<div class="s_box">
+		   <div class="left"><i class="iconfont">&#x344a;</i><span>所有商品</span></div>
+		   <div class="right">
+              <div class="title">
+				 <ul> 
+					<li>
+					     <a href="#">首页</a>
+						 <div class="t_1 yellow"></div>
+					</li>
+					<li><a href="#">电商系统</a>
+						 <div class="t_1 green"></div>
+					</li>
+					<li><a href="#">商业模板</a>
+						 <div class="t_1 pink"></div>
+					</li>
+					<li>
+					     <a href="#">免费模板</a>
+						 <div class="t_1 gray"></div>
+					</li>
+					<li>
+					     <a href="#">插件区</a>
+						 <div class="t_1 orange"></div>
+					</li>
+					<li>
+					     <a href="#">手机端</a>
+						 <div class="t_1 red"></div>
+					</li>
+					<li>
+					     <a href="#">合作代理</a>
+						 <div class="t_1 black"></div>
+					</li>
+				    <li>
+					    <a href="#">官方论坛</a>
+						<div class="t_1 white"></div>
+					</li>
+				  </ul>	
+			  </div>
+			 <div class="shop_car"><i class="iconfont">&#x344b;</i>购物车<span>0</span></div>
+		   </div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript">
+	  $(function(){
+			//上一页
+			$(".prev").click(function(){
+				
+					$(".bannerBox").append($(".bannerBox li:first"));//将第一个li放到最前面
+					$(".bannerBox").css("left","-1350px");
+					$(".bannerBox").animate({"left":"0px"},500);				
+			});
+			//下一页
+			$(".next").click(function(){
+				$(".bannerBox").prepend($(".bannerBox li:last"));//将最后一个li追加到最前面
+				$(".bannerBox").css("left","-1350px");
+				$(".bannerBox").animate({"left":"0px"},500);		
+			})
+		})
+	//自动播放
+	function autoPlay(){
+		$(".bannerBox").append($(".bannerBox li:first"));
+		$(".bannerBox").css("left","-1350px");
+		$(".bannerBox").animate({"left":"0px"},500);
+	}
+	autoPlay();
+	var setTime = setInterval(autoPlay,2000);//自动1秒钟播放
+	/*$(".prev,.next").hover(function(){
+		clearInterval(setTime);
+	},function(){
+		setTime = setInterval(autoPlay,2000);
+		});*/
+		$(".prev,.next").hover(function(){
+			clearInterval(setTime);
+		},function(){
+			setTime = setInterval(autoPlay,2000);//鼠标移开时，自动播放
+		});
+		
+	</script>
+	<!--banner区域-->
+	<div id="banner">
+	  <a href="javascript:void(0);" class="prev"><i class="iconfont">&#x3465;</i></a>
+	  <a href="javascript:void(0);" class="next"><i class="iconfont">&#x3464;</i></a>
+	  <ul class="bannerBox">
+		   <li><img src="http://www.ecmoban.com/content/themes/ecmoban2014/images/sc_o2o.jpg" alt="掌柜"></li>
+		   <li><img src="http://www.ecmoban.com/content/themes/ecmoban2014/images/ecjia-b2b2c.jpg" alt="多商用户"></li>
+		   <li><img src="http://www.ecmoban.com/content/themes/ecmoban2014/images/cover-page-shangchuang-2.jpg" alt="商城"></li>
+		   <li><img src="http://www.ecmoban.com/content/themes/ecmoban2014/images/cover-page-slide-2.png" alt="大京东"></li>
+	   </ul>
+	</div>
+	<!--选项卡-->
+	<div id="select">
+	    <div class="s1"></div>
+		<div class="s1"></div>
+		<div class="s1"></div>
+		<div class="s1"></div>
+	</div>
+	<!--body1-->
+	<div id="body_top">
+		<ul>
+		  <li><img src="http://www.ecmoban.com/content/themes/ecmoban2014/images/kill-more-birds.png" alt=""></li>
+		  <li><img src="http://www.ecmoban.com/content/themes/ecmoban2014/images/sanheyi.png" alt=""></li>
+		  <li><img src="http://www.ecmoban.com/content/themes/ecmoban2014/images/xiangyingshi.png" alt=""></li>
+		  <li><img src="http://www.ecmoban.com/content/themes/ecmoban2014/images/mobile-terminal.png" alt=""></li>
+		</ul>
+	</div>
+	<style>
+       #body_center .contain_1 li img{transform:scale(0.9);transition:all 0.8s ease;}
+	   #body_center .contain_1 li img:hover{transform:scale(0.99) skew(2deg);transition:all 0.8s ease;}
+	
+	</style>
+	<!--body2-->
+	<div id="body_center">
+		<div class="contain_1">
+			<h1>电商系统</h1>
+			 <ul>
+				<li><img src="http://upfile.ecmoban.com/images/201507/thumb_img/596_thumb_G_1437442075515.jpg"alt=""></li>
+				<li><img src="http://upfile.ecmoban.com/images/201507/thumb_img/596_thumb_G_1437442075515.jpg"alt=""></li>
+				<li><img src="http://upfile.ecmoban.com/images/201507/thumb_img/596_thumb_G_1437442075515.jpg"alt=""></li>
+				<li><img src="http://upfile.ecmoban.com/images/201507/thumb_img/596_thumb_G_1437442075515.jpg"alt=""></li>
+			  </ul>
+		</div>
+	   <div class="contain_2" >
+		   <h1 class="c1">精品推荐</h1>
+		   <ul>
+				<li>
+				  <div><img src="http://upfile.ecmoban.com/images/201505/thumb_img/621_thumb_G_1432246227031.png"alt=""></div>
+				 <a href="#">
+						<span>ECSHOP模板堂2015新京东全网首发...<br>
+						ECSHOP模板 - 综合通用<br>
+						与手机端组合购买立减500</span>
+                    </a>
+				</li>
+	
+				<li><img src="http://upfile.ecmoban.com/images/201505/thumb_img/621_thumb_G_1432246227031.png"alt="">
+					<a href="#">
+						<span>ECSHOP模板堂2015新京东全网首发...<br>
+						ECSHOP模板 - 综合通用<br>
+						与手机端组合购买立减500</span>
+                    </a>
+				</li>
+				<li><img src="http://upfile.ecmoban.com/images/201505/thumb_img/621_thumb_G_1432246227031.png"alt="">
+				   <a href="#">
+						<span>ECSHOP模板堂2015新京东全网首发...<br>
+						ECSHOP模板 - 综合通用<br>
+						与手机端组合购买立减500</span>
+                    </a>	
+				</li>
+				<li><img src="http://upfile.ecmoban.com/images/201505/thumb_img/621_thumb_G_1432246227031.png"alt="">
+				   <a href="#">
+						<span>ECSHOP模板堂2015新京东全网首发...<br>
+						ECSHOP模板 - 综合通用<br>
+						与手机端组合购买立减500</span>
+                    </a>
+				</li>
+				<li><img src="http://upfile.ecmoban.com/images/201506/thumb_img/625_thumb_G_1434566451643.png"alt="">
+					<a href="#">
+						<span>ECSHOP模板堂2015新京东全网首发...<br>
+						ECSHOP模板 - 综合通用<br>
+						与手机端组合购买立减500</span>
+                    </a>	
+				</li>
+				<li><img src="http://upfile.ecmoban.com/images/201506/thumb_img/520_thumb_G_1435543288259.png"alt="">
+					<a href="#">
+						<span>ECSHOP模板堂2015新京东全网首发...<br>
+						ECSHOP模板 - 综合通用<br>
+						与手机端组合购买立减500</span>
+                    </a>
+				</li>
+				<li><img src="http://upfile.ecmoban.com/images/201506/thumb_img/626_thumb_G_1434663421572.png"alt="">
+					<a href="#">
+						<span>ECSHOP模板堂2015新京东全网首发...<br>
+						ECSHOP模板 - 综合通用<br>
+						与手机端组合购买立减500</span>
+                    </a>
+				</li>
+				<li><img src="http://upfile.ecmoban.com/images/201506/thumb_img/626_thumb_G_1434663421572.png"alt="">
+					<a href="#">
+						<span>ECSHOP模板堂2015新京东全网首发...<br>
+						ECSHOP模板 - 综合通用<br>
+						与手机端组合购买立减500</span>
+                    </a>
+				</li>
+				<li><img src="http://upfile.ecmoban.com/images/201506/thumb_img/633_thumb_G_1435200440601.jpg"alt="">
+					<a href="#">
+						<span>ECSHOP模板堂2015新京东全网首发...<br>
+						ECSHOP模板 - 综合通用<br>
+						与手机端组合购买立减500</span>
+                    </a>
+				</li>
+				<li><img src="http://upfile.ecmoban.com/images/201506/thumb_img/402_thumb_G_1433458952261.png"alt="">
+					<a href="#">
+						<span>ECSHOP模板堂2015新京东全网首发...<br>
+						ECSHOP模板 - 综合通用<br>
+						与手机端组合购买立减500</span>
+                    </a>
+				</li>
+				<li><img src="http://upfile.ecmoban.com/images/201502/thumb_img/588_thumb_G_1422900171207.png"alt="">
+					<a href="#">
+						<span>ECSHOP模板堂2015新京东全网首发...<br>
+						ECSHOP模板 - 综合通用<br>
+						与手机端组合购买立减500</span>
+                    </a>
+				</li>
+				<li><img src="http://upfile.ecmoban.com/images/201503/thumb_img/601_thumb_G_1427084229822.png"alt="">
+					<a href="#">
+						<span>ECSHOP模板堂2015新京东全网首发...<br>
+						ECSHOP模板 - 综合通用<br>
+						与手机端组合购买立减500</span>
+                    </a>
+				</li>
+			</ul>
+		</div>
+      <div class="contain_3" >
+		<h1 class="c1">经典案例</h1>
+		<span>more</span>
+	    <ul>
+			<li><img src="http://www.ecmoban.com/content/themes/ecmoban2014/images/cover-page-case-1.png"alt="">
+				<a href="#"><span class="s1">站酷网 | 中国最具人气的设计师互动平台</span></a>
+			</li>
+			<li><img src="http://www.ecmoban.com/content/themes/ecmoban2014/images/cover-page-case-2.png"alt="">
+				<a href="#"><span class="s1">澳优乳业 | 中国高端奶粉市场五强中唯一的奶源<br>来自澳洲的中国品牌</span></a>
+			</li>
+			<li><img src="http://www.ecmoban.com/content/themes/ecmoban2014/images/cover-page-case-3.png"alt="">
+				<a href="#"><span class="s1">植美村 | 中国最受消费者欢迎的二十大品牌<br>中国著名品牌之一</span></a>
+			</li>
+			<li><img src="http://www.ecmoban.com/content/themes/ecmoban2014/images/cover-page-case-4.png"alt="">
+				<a href="#"><span class="s1">上海添香 | 拥有国内顶尖整合营销团队<br>防辐射服装行业的第一品牌</span></a>
+			</li>
+			<li><img src="http://www.ecmoban.com/content/themes/ecmoban2014/images/cover-page-case-5.png"alt="">
+				<a href="#"><span class="s1">零食够 | 各类进口食品、健康零食<br>全球采购，吃出健康国际范</span></a>
+			</li>
+		</ul>
+	  </div>
+	</div>
+   <!--body3-->
+   <div id="body_bottom">
+	  <div class="s2">
+		<h1>口碑堂</h1><i class="iconfont">&#xe6aa;</i>
+		
+		<div class="box t1">		       
+     	    <p><a href="#">电商资讯</a></p>
+		  <ul>
+			<li><a href="#">百度口碑</a></li>
+			<li><a href="#">百度口碑</a></li>
+			<li><a href="#">百度口碑</a></li>
+			<li><a href="#">百度口碑</a></li>
+		   </ul>
+		</div>
+	  </div>
+	  <div class="s2">
+	     <h1>知识堂</h1><i class="iconfont">&#xf00fc;</i><span><i class="iconfont">&#xf0170;</i></span>
+		 <div class="box t2">
+			<ul>
+			   <li><a href="">模板堂ECSHOP合集版下载 ECSHOP下载 最新ECS...</a></li>
+			   <li><a href="">ECSHOP报错The table 'ecs_sessio...</a></li>
+			   <li><a href="">ECShop的transport.js文件与jquery文...</a></li>
+			   <li><a href="">【ECSHOP推荐管理】推荐分成使用说明</a></li>
+			   <li><a href="">ecshop后台无法上传logo或上传出错，怎么办呢？</a></li>	
+			</ul>
+		 </div>
+	   </div>
+	  <div class="s2 ">
+		 <h1>快报堂</h1><i class="iconfont">&#xf00bc;</i><span><i class="iconfont">&#xf01ba;</i></span>
+		 <div class="box t3">
+			<ul>
+				<li><a href="">ECJia官网全新改版 新的视野 心的体验</a></li>
+				<li><a href="">商创网络为“秀商城，赢大奖”冠军颁奖！</a></li>
+				<li><a href="">6强诞生！热烈庆祝“秀商城，赢大奖！”活动圆满结束！</a></li>
+				<li><a href="">关于“秀商城，赢大奖”活动恶意刷票行为的处理公告</a></li>
+				<li><a href="">模板堂优秀ECTouch微商城评选大赛投票火热进行中</a></li>	
+			</ul>
+		 </div> 
+	  </div>
+   </div><!--endbody3-->
+   <!--清除浮动-->
+   <div class="clear"></div>
+   <!--分割线-->
+   <div id="line"></div>
+   <!--底部盒子-->
+   <div id="box">
+	  <div class="t1">
+	    <h5>新手上路</h5>
+		<ul>
+			<li>ecshop下载</li>
+			<li>ecshop补丁</li>
+			<li>ecshop程序下载</li>
+			<li>测试后台</li>
+	    </ul>
+	  </div>
+	  <div class="t1">
+	    <h5>会员中心</h5>
+		<ul>
+			<li>在线充值</li>
+			<li>我的订单</li>
+			<li>我的关注</li>
+			<li>我的红包</li>
+	    </ul>
+	   </div>
+	   <div class="t1">
+	    <h5>帮助中心</h5>
+		<ul>
+			<li>在线手册</li>
+			<li>安装使用</li>
+			<li>模板说明</li>
+			<li>视频教程</li>
+	    </ul>
+	   </div>
+	   <div class="t1">
+		<h5>客户端</h5>
+	  <ul>
+		<li>iPhone版</li>
+		<li>Android版</li>
+		<li>iPad版</li>
+	  </ul>
+	  </div>
+   </div>
+   <!--底部-->
+   <div id="foot">
+		 <p class="f1">
+		 <ul>
+			<li><a href="#">联系我们</a></li> 
+			<li><a href="#">公司简介</a></li>  
+			<li><a href="#">支付方式</a></li>  
+			<li><a href="#">法律条款</a></li>  
+			<li><a href="#">合作代理</a></li>  
+			<li><a href="#">友情链接</a></li>  
+			<li><a href="#">诚聘英才</a></li>  
+			<li><a href="#">服务支持</a></li> 
+		 </ul>
+		 <p>
+         <br>
+	<!--脚部-->
+         <p class="f2">© 2005-2015 ecshop模板堂(ecmoban.com) 版权所有，并保留所有权利。常年法律顾问:上海华宏律师事务所<p>
+         <p class="f2">上海市普陀区中山北路3553号伸大厦3层</p>
+         <img src="image/验证.png">
+   </div>
+ </body>
+</html>

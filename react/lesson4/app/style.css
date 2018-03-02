@@ -1,0 +1,38 @@
+body{
+	background-color:#e5e5e5;
+}
+.app{
+	color:blue;
+}
+.red{
+	width:100%;
+	height:50px;
+	background-color:#ccc;
+	
+}
+
+.header-wrap-box{
+	width:100%;
+	height:60px;
+}
+.header-logo{
+	width:150px;
+	height:100%;
+	background-color:green;
+	float:left;
+}
+.header-btn{
+	width:60px;
+	height:60px;
+	background:yellow;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.header-tel{
+	color:red;
+}
+
