@@ -1,0 +1,11 @@
+body {
+  background: #008000;
+}
+.test-bg {
+  width: 60px;
+  height: 60px;
+  background-image: url(img/centerBg-7aab08.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: box;
+}
