@@ -1,0 +1,37 @@
+html,body{
+		margin:0;
+		padding:0;
+	}
+	.wrap-box{
+		height: 100%;
+		display: -webkit-box;
+		display: box;
+		display: flex;
+		-webkit-box-orient:vertical;
+		box-orient:vertical;
+		-webkit-flex-direction:column;
+		flex-direction: column;
+	}
+	.nav-tab{
+		background-color: #ccc;	
+	}
+	.nav-tab ul{
+		display: flex;
+		margin: 0px;
+		padding: 10px 0;
+		 transform-origin: 0px 0px 0px;
+	    opacity: 1;
+	    transform: scale(1, 1);
+	}
+	.nav-tab ul li{
+		list-style: none;
+		flex:1;
+		text-align: center;			
+	}
+	.page-body{
+		    -webkit-box-flex: 1;
+		    -moz-box-flex: 1;
+		    -webkit-flex: 1;
+		    -ms-flex: 1;
+		    flex: 1;
+	}

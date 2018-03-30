@@ -4,7 +4,11 @@ let webpack = require('webpack');
 
 module.exports = {
 	entry: {
-		'index': [path.join(__dirname, '/src/js/index')]
+		'index': [path.join(__dirname, '/src/js/index')],
+		'vendor':[
+			'vue',
+			'vuex'
+		]
 	},
 	output: {
 	    path: path.join(__dirname, '/assets/dist'),//运行webapck -w 生成后的目录
@@ -56,12 +60,15 @@ module.exports = {
 	plugins: [
 		new ExtractTextPlugin("[name].css"),
 		// 压缩
-		new webpack.optimize.UglifyJsPlugin(),
-		require('autoprefixer')
+		new webpack.optimize.UglifyJsPlugin(),//压缩js
+		// require('autoprefixer')
+		new webpack.optimize.CommonsChunkPlugin({
+			name: 'vendor',
+			filename: 'vendor.js',
+			 minChunks: Infinity,
+		})
 	],
-	externals: {
-		zepto: 'Zepto',
-		swiper: 'Swiper',
-		template: 'template',
+	externals: {//这个配置，引入的jquery不会被编译在webpack中
+		vue: 'Vue',//前面是别名，后面是引入的文件
 	}
 }

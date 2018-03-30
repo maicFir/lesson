@@ -1,0 +1,1 @@
+"use strict";var helpInfo="\nUsage: "+process.info.cmdName+" <command>\nArgs:\n\t-v:       -- Print version\nCommands:\n\tinit      -- Initialize project\n\tupdate    -- Update project to newer version\n\thelp      -- Print help\n";console.log(helpInfo);

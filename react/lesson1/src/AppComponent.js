@@ -122,7 +122,7 @@ class AppComponent extends React.Component {
       }) 
   }
   render() {
-    const {list} = this.props;
+    const list = this.props;
     return (<div className="js-main">
       <Count 
          value={store.getState()}

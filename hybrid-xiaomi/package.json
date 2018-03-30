@@ -1,0 +1,25 @@
+{
+  "name": "toolkit",
+  "version": "0.0.24",
+  "description": "Supply commands to compile scripts and generate ZIP.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "fs-extra": "^2.0.0",
+    "prompt": "^1.0.0",
+    "semver": "^5.1.0",
+    "shelljs": "^0.7.7",
+    "xtoolkit": "^0.1.7",
+    "yargs": "^6.6.0",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "socket.io": "^2.0.3",
+    "tar": "^3.1.5",
+    "qr-image": "^3.2.0",
+    "cross-env": "^5.0.1"
+  },
+  "bin": {
+    "mix": "bin/mix"
+  }
+}

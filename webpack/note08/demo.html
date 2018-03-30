@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>运动的小球</title>
+ </head>
+ <body>
+  	<canvas id="canvas"></canvas>
+  	<script type="text/javascript">
+  		//获取canvans对象
+  		var canvas = document.getElementById("canvas");
+  		//获取2d绘画环境
+  		var ctx = canvas.getContext('2d');
+  		//获取宽高度
+  		const w = canvas.width = 600;
+  		const h = canvas.height = 600;
+
+  		var Ball = {
+  			creactBall:function(x,y,r,context){
+  				this.x = x;//x水平位置
+  				this.y = y;//y水平位置
+  				this.r = r;//半径
+  				this.bgColor = "rgb("+Math.ceil(this.Rnfn([20,255]))+","+Math.ceil(this.Rnfn([20,255]))+","+Math.ceil(this.Rnfn([20,255]))+")";
+  				this.vy = this.Rnfn([2,6]);//vy轴速度
+  				this.g = this.Rnfn([0.2,0.4]);//重力加速度
+  				this.a = 0;//摩擦系数
+
+  				context.save();
+  				context.translate(this.x,this.y);//左右平移的位置
+  				context.fillStyle = this.bgColor;//背景颜色
+  				context.beginPath();
+  				context.arc(0,0,this.r,0,2*Math.PI);
+  				context.stroke();
+  				context.fill();
+  				context.restore();
+  				return this;
+
+  			},
+
+  			Rnfn:function(arr){
+  				let max = Math.max(...arr);
+  				let min = Math.min(...arr);
+  				return Math.random()*(max-min)+min
+  			},
+  			move:function(context){
+  					
+  				// this.y+=this.vy;
+  				// this.vy+=this.g;//重力加速度
+
+  				// this.current = this.vy*-0.75;
+  				// //碰撞检测
+  				// if(this.y+this.r>=ctx.canvas.height){
+  				// 	this.y = ctx.canvas.height - this.r;
+  				// 	if(Math.abs(this.current - this.a)<0.01)return false;
+  				// 	this.a = this.vy*=-0.75;
+  				// }
+  				// ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height)
+  				// Ball.creactBall(this.x,this.y,this.r,ctx);
+
+  				this.y+=this.vy;
+				  this.vy+=this.g;
+				let current = this.vy*-0.75;
+				if(this.y+this.r>=context.canvas.height){
+					this.y = context.canvas.height - this.r;
+					if(Math.abs(current - this.a)<0.01) return false;
+					this.a = this.vy*=-0.75;
+				}
+				//清除画布
+				context.clearRect(0,0,context.canvas.width,context.canvas.height);
+				Ball.creactBall(this.x,this.y,this.r,context);
+				
+				
+  				return true
+  			}
+  		}
+  		
+  		canvas.onclick = function(e){
+  			var x = e.offsetX;
+  			var y = e.offsetY;
+  			var r = Ball.r = 50;
+  			Ball.creactBall(x,y,r,ctx);
+  			action();
+  		}
+  		var timer = null;
+  		function action(){
+  			timer = window.requestAnimationFrame(action);
+  			if(!Ball.move(ctx)){
+  				window.cancelAnimationFrame(timer)
+  			}
+  		}
+
+  	</script>
+ </body>
+</html>

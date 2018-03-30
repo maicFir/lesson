@@ -1,0 +1,40 @@
+
+ @media only screen and (min-width:1024px) {
+	html{font-size:100px}			
+}
+@media only screen and (max-width:1024px){
+    html{font-size:100px}
+}
+@media only screen and (max-width:768px){
+    html{font-size:90.909px}
+}
+@media only screen and (max-width:640px){
+    html{font-size:82.644}
+}
+@media only screen and (max-width:600){
+    html{font-size:75.131px}
+}
+@media only screen and (max-width:540px){
+    html{font-size:68.301px}
+}
+@media only screen and (max-width:480px){
+    html{font-size:62.092px}
+}
+@media only screen and (max-width:414px){
+    html{font-size:56.447px}
+}
+@media only screen and (max-width:400px){
+    html{font-size:51.315px}
+}
+@media only screen and (max-width:375px){
+    html{font-size:46.65px}
+}
+@media only screen and (max-width:360px){
+    html{font-size:42.409px}
+}
+@media only screen and (max-width:320px){
+    html{font-size:38.553px}
+} 
+p{
+    font-size:.16rem;
+}
