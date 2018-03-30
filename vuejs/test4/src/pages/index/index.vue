@@ -1,12 +1,15 @@
 <template>
     <div class="indexmain">
         <div class="navtab">
-            <nav-tab :tablist="navTablist"></nav-tab>
+            <nav-tab :tablist="navTablist" @hashchange="hashchange"></nav-tab>
         </div>
-        <input type="button" value="添加" @click="add">
+        <div class="cnt">
+           <p  v-for="(item,idx) in classList" :key="idx" :class="item" v-if="hash==item">{{item}}</p>
+        </div>
+        <!-- <input type="button" value="添加" @click="add">
         {{count}}
         <input type="button" value="减少" @click="reduce"/>
-        {{msg}}
+        {{msg}} -->
         
     </div>
 </template>
@@ -19,7 +22,9 @@ import navTab from '@default/components/navTab/navTab.vue';
 export default {
   data(){
       return{
-          navTablist:this.$store.getters.getdataList
+          navTablist:this.$store.getters.getdataList,
+          classList:['html5',"css3","react",'nodejs'],
+          hash:'html5'
       }
   },
   components:{navTab},
@@ -33,14 +38,13 @@ export default {
       },
       reduce(){
            this.$store.commit('decrement',{num:10,money:100})
+      },
+      hashchange(pames){
+         this.hash = pames;
+        console.log("pames",pames);
+        
       }
   },
-//   computed:{
-//       count(){//以计算属性返回某个状态
-//           return this.$store.state.count
-//       }
-//   }
-        //mapState：统一管理state，通过this.$store.count获取数据
     computed:mapState({
         count:function(){
             return this.$store.state.count
@@ -51,7 +55,24 @@ export default {
         dataList:function(){
             return this.$store.getters.getdataList
         }
-    })
+    }),
+    //页面初始化实例或者刷新当前网页时，会重新加载这个方法
+    mounted(){
+        console.log("首次刷新加载")
+    },
+    //data发生变化时，就会触发该函数
+    updated(){
+        console.log(Math.random()*10)
+       //this.hashchange();
+    }
 }
 </script>
+<style lang="stylus">
+   .html5,.css3,.react,.nodejs{
+       width:100%;
+       heigh:60px;
+       background:red;
+   }
+</style>
+
 
