@@ -10,7 +10,7 @@
         {{count}}
         <input type="button" value="减少" @click="reduce"/>
         {{msg}} -->
-        <list-view :picList="picList"></list-view>
+        <list-view :picList="picList" ></list-view>
         
         <count-tab></count-tab>
     </div>
@@ -19,6 +19,7 @@
 <script>
 
 import {mapState} from 'vuex';
+import $ from "jquery";
 import navTab from '@default/components/navTab/navTab.vue';
 import listView from "@default/components/viewList/viewList.vue"
 import countTab from '@default/components/count/count.vue';
@@ -30,6 +31,7 @@ export default {
           navTablist: this.$store.getters.getdataList,
           classList: this.$store.getters.getdataList,
           currentIndex:0,
+          currentPage: 1,
           picList:[]
       }
   },
@@ -45,9 +47,24 @@ export default {
       reduce(){
            this.$store.commit('decrement',{num:10,money:100})
       },
-      hashchange(pames){
-         this.currentIndex = pames;
-        console.log("pames",pames);
+      hashchange(parms){
+         this.currentIndex = parms;
+         var currentpage = this.currentPage;
+         var data = {
+             id:parms,
+             page: currentpage
+         }
+         $.ajax({
+             type:'get',
+             data:data,
+             url:"/test/tuijian/list.do"
+         }).then((res)=>{
+              console.dir(res)
+            
+             this.picList = res.data;
+         });
+        
+        console.log("pames",parms);
       },
       isCurrentShow(idx){
         if(this.currentIndex == idx){
@@ -80,7 +97,7 @@ export default {
     },
     //data发生变化时，就会触发该函数
     updated(){
-        console.log(Math.random()*10)
+        //console.log(Math.random()*10)
        //this.hashchange();
     }
 }

@@ -64,4 +64,5 @@ module.exports = {
 	externals: {//这个配置，引入的jquery不会被编译在webpack中
 		
 	}
+
 }
