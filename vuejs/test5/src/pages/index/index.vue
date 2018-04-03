@@ -1,16 +1,13 @@
 <template>
     <div class="indexmain">
-        <div class="navtab">
-            <nav-tab :tablist="navTablist" @hashchange="hashchange"></nav-tab>
-        </div>
-        <div class="cnt">
-           <p  v-for="(item,idx) in classList" :key="idx" :class="'cnt'+idx" v-if="isCurrentShow(idx)">{{item.name}}--{{item.key}}</p>
-        </div>
+        <nav-tab :tablist="navTablist" @hashchange="hashchange"></nav-tab>
         <!-- <input type="button" value="添加" @click="add">
         {{count}}
         <input type="button" value="减少" @click="reduce"/>
         {{msg}} -->
-        <list-view :picList="picList" ></list-view>
+         <list-view :picList="picList" :type="type"></list-view>
+       
+       
         
         <count-tab></count-tab>
     </div>
@@ -30,6 +27,7 @@ export default {
       return{
           navTablist: this.$store.getters.getdataList,
           classList: this.$store.getters.getdataList,
+          type:"tuijian",
           currentIndex:0,
           currentPage: 1,
           picList:[]
@@ -48,10 +46,14 @@ export default {
            this.$store.commit('decrement',{num:10,money:100})
       },
       hashchange(parms){
-         this.currentIndex = parms;
-         var currentpage = this.currentPage;
+         this.currentIndex = parms.id;
+         let currentpage = this.currentPage;
+         let id = parms.id;
+         let type = parms.type;
+         this.type = type;
          var data = {
-             id:parms,
+             id:id,
+             type: type,
              page: currentpage
          }
          $.ajax({
@@ -103,11 +105,8 @@ export default {
 }
 </script>
 <style lang="stylus">
-   .html5,.css3,.react,.nodejs{
-       width:100%;
-       heigh:60px;
-       background:red;
-   }
+    @import "./index.styl";
+   
 </style>
 
 

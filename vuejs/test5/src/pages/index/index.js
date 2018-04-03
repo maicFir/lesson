@@ -3,10 +3,15 @@ import Vue from 'vue';
 
 import Index from './index.vue';
 import store from '@default/store/store.js';
+import updateScreen from '@default/common/adapterScreen.js';
+import VueLazyLoad from "vue-lazyload"
 
-import style from '@default/components/navTab/navTab.styl'
-
-
+Vue.use(VueLazyLoad, {
+    preLoad: 1.3,
+    error: '/src/img/error.jpg',
+    loading: '/src/img/11/009.gif',
+    attempt: 1
+  })
 
 
 var vm = new Vue({

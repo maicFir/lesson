@@ -1,8 +1,6 @@
 <template>
     <div class="nav-top">
-        <p>
-            <a :href="'/#'+idx" @click="tabClickfn(item,idx)" :alt="item" v-for="(item,idx) in datalist" :key="idx" :class="hash == idx?'active':''">{{item.name}}</a>
-        </p>
+        <a :href="'/#'+idx" @click="tabClickfn(item,idx,item.type)" :alt="item.name" v-for="(item,idx) in datalist" :key="idx" :class="hash == idx?'active':''">{{item.name}}</a> 
     </div>
 </template>
 
@@ -21,10 +19,14 @@ export default {
   methods:{
 
 
-      tabClickfn(item,idx){
+      tabClickfn(item,idx,type){
           this.hash = idx;
           this.curentHash(idx);
-           this.$emit('hashchange',this.curentHash())  
+          var parms = {
+              id: this.curentHash(),
+              type: type
+          }
+           this.$emit('hashchange',parms)  
       },
       hashChange(){
           let self = this;
@@ -44,7 +46,7 @@ export default {
             if(nUrl == ''){
                 console.log(1111)
             }
-            self.$emit('hashchange',nUrl);
+            //self.$emit('hashchange',nUrl);
             self.hash = nUrl;
       })
     },
@@ -74,31 +76,29 @@ export default {
   mounted(){
       console.log("11111")
      this.hashChange();
+     var type = '';
      this.hash = this.curentHash();
-     this.$emit('hashchange',this.curentHash())
+     let hash = this.hash;
+     switch(this.curentHash()*1){
+         case 0:type="tuijian";break;
+         case 1:type="lianyiqun";break;
+         case 2:type="qiuku";break;
+         case 3:type="nvzhuang";break;
+         default:;break;
+     }
+     let parms = {
+         id: hash,
+         type: type,
+         page: 1
+     }
+     this.$emit('hashchange',parms)
      
   }
 }
 </script>
 <style lang="stylus">
-*{padding:0px;margin:0px;}
-.nav-top{
-    p{
-        display:flex;
-        justify-content center;
-        text-align:center;
-        flex-direction:row;
-        a{
-            display:block;
-            flex:1;
-           &.active{
-               background:green;
-           }
-        }
-    }
-    
-    
-}
+@import "../../styles/mixins.styl";
+@import "./navTab.styl";
 </style>
 
 

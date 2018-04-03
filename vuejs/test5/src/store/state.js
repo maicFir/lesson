@@ -5,19 +5,23 @@ var state = {
     dataList:[
         {
             name: '推荐',
-            key:"0"
+            key:"0",
+            type:'tuijian'
         },
         {
             name: '连衣裙',
-            key:'1'
+            key:'1',
+            type:"lianyiqun"
         },
         {
             name: '秋裤',
-            key:'2'
+            key:'2',
+            type:"qiuku"
         },
         {
             name: "女装",
-            key:'3'
+            key:'3',
+            type:'nvzhuang'
         }
     ]
 }
