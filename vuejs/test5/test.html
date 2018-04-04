@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>淘宝flex移动端适配</title>
+    <!--
+    淘宝移动端适配 lib-flexible
+
+        1：获取dpr,设置dpr的倒数,dpr(设备像素比，当前显示设备的物理像素分辨率/css像素的分辨率比值)
+        2：生成viewport meta，initial-scale的scale值
+        3：设置rem为clientWidth  1/10
+
+        body的像素始终是12px,
+        html的根html的font-size: deviceW/10  如果是iphone4 1rem=32px
+    -->
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    
+    <link rel="stylesheet" href="/src/pages/index/index.css">
+    <style>
+        .wrap-box{
+            display: -webkit-flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+       
+        
+    </style>
+</head>
+<body>
+    <div class="wrap-box">
+        <div>手淘</div>
+        <div>京东</div>
+        <div>天猫</div>
+        <div>蘑菇街</div>
+    </div>
+</body>
+</html>

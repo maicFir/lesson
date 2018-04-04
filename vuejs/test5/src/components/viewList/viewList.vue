@@ -1,10 +1,10 @@
 <template>
  <div class="list-container">
-    <div class="pic-view-list" v-for="(item,idx) in navTablist" :key="idx">
+    <div class="pic-view-list" ref="picViewList" v-for="(item,idx) in navTablist" :key="idx">
         <a href="" class="item" v-for="(items,i) in picList" :key="i" v-if="type == item.type">
             <div class="pic-left">
                 <div class="img">
-                    <img v-lazy="items.img" alt="">
+                    <img :src="defaultimg" :data-src="items.img" alt="">
                 </div>
                 <div class="desc-info">
                     <p>{{items.title}}</p>
@@ -23,32 +23,54 @@
     
 </template>
 <script>
-import $ from 'jquery';
+import $ from "jquery";
 export default {
-  props:['picList','type'],
-  data(){
-      return{
-          navTablist: this.$store.getters.getdataList
+  props: ["picList", "type"],
+  data() {
+    return {
+      defaultimg: "/src/img/error.jpg",
+      navTablist: this.$store.getters.getdataList
+    };
+  },
+  created() {},
+  updated() {
+    this.loadlistData();
+    this.lazyImg(this.$refs.picViewList);
+  },
+  methods: {
+    loadlistData() {
+      console.log("dgyededed===" + Math.random() * 10);
+    },
+    lazyImg(node){
+            var dataCache = {};
+           setTimeout(function(){
+
+            var nodes = $(node).find("img");
+            var imgsArr = Array.from(nodes);
+            imgsArr.map((img)=>{
+                var src = img.getAttribute("data-src");//获取页面的data-src
+                var Oimg;
+                if(!src){
+                    return;
+                }
+                if(!dataCache[src]){
+                    Oimg = new Image();
+                    Oimg.src = src;
+                    Oimg.onload = function(){
+                        img.src = src;
+                        dataCache[src] = true;
+                        Oimg = null;
+                    }  
+                }else{
+                    img.src = src;
+                }
+                img.removeAttribute("data-src")
+            })
+        },500)
       }
   },
-  created(){
-     
-     
-  },
-  updated(){
-      
-      this.loadlistData();
-  },
-  methods:{
-      loadlistData(){
-           console.log("dgyededed==="+Math.random()*10)
-      }
-  },
-  mounted(){
-      
-       
-  }
-}
+  mounted() {}
+};
 </script>
 
 
