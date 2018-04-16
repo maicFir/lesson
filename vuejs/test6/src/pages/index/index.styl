@@ -1,0 +1,45 @@
+@import "../../styles/mixins.styl";
+
+.list-container{
+    height:100%;
+    overflow-y:auto;
+}
+div.pic-view-list{
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+div.pic-view-list a{
+    display:block;
+    width:50%;
+    float:left;
+
+}
+.pic-left{
+    >.img{
+        height:4.57rem;
+        padding:10px 5px 10px 5px;
+        img{
+            width:100%;
+            height:100%;
+        }
+    }
+  >.desc-info{
+      >p{
+            max-width: 4.5rem;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-size:.15rem;
+            padding-left:.2rem;
+        span{
+            i{
+                font-style:normal
+            }
+        }
+      }
+  }
+}
+.minirefresh-wrap{
+    margin-top:46px;
+}
