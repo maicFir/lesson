@@ -6,10 +6,6 @@
         <input type="button" value="减少" @click="reduce"/>
         {{msg}} -->
          <list-view :picList="picList" :type="type"></list-view>
-       
-       
-        
-        <count-tab></count-tab>
     </div>
 </template>
 
