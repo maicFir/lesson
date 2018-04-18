@@ -9,13 +9,15 @@
 <script>
 
 
+
 export default {
  
   props:['tablist'],
   data(){
       return{
           datalist: this.tablist, //父组件往子组件,
-          hash: "html5"
+          hash: "html5",
+          isActive: false
       }
   },
   methods:{
@@ -23,7 +25,10 @@ export default {
 
       tabClickfn(item){
           this.hash = item;
-          this.$emit("hashchange",item);   
+          this.$emit("hashchange",item);
+          this.$on("hashchange",function(msg){
+            console.log("msg",msg)
+          })  
       },
       hashChange(){
           let self = this;
@@ -85,8 +90,8 @@ export default {
         }
         //history.pushState({},'',hash+".html")
         //history.replaceState({},"","#"+hash+type);重新刷新页面会向hash值中添加一个type
-
-        history.replaceState({},"","#"+hash)
+       // history.pushState({},'',"#"+hash+"1111")
+        history.replaceState({},"","#"+hash+"111")
 
         return hash;
       }
@@ -96,7 +101,7 @@ export default {
   //mounted只会调用一次
   mounted(){
       console.log("11111")
-      this.hashChange();
+     this.hashChange();
      var curenthash = this.curentHash();
      this.hash = curenthash;
      this.$emit('hashchange',curenthash)
@@ -105,11 +110,12 @@ export default {
 }
 </script>
 <style lang="stylus">
+
 *{padding:0px;margin:0px;}
 .nav-top{
     p{
         display:flex;
-        justify-content center;
+        justify-content:center;
         text-align:center;
         flex-direction:row;
         a{
@@ -119,9 +125,7 @@ export default {
                background:green;
            }
         }
-    }
-    
-    
+    }    
 }
 </style>
 

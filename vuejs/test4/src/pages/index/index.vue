@@ -43,6 +43,7 @@ export default {
          this.hash = pames;
         console.log("pames",pames);
         
+        
       }
   },
     computed:mapState({

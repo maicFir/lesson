@@ -4,7 +4,7 @@ import Vue from 'vue';
 import Index from './index.vue';
 import store from '@default/store/store.js';
 
-import style from '@default/components/navTab/navTab.styl'
+//import style from '@default/components/navTab/navTab.styl'
 
 
 

@@ -1,4 +1,16 @@
+*{padding:0px;margin:0px;}
 .nav-top{
-    display:flex;
-    display:box;
+    p{
+        display:flex;
+        justify-content:center;
+        text-align:center;
+        flex-direction:row;
+        a{
+            display:block;
+            flex:1;
+           &.active{
+               background:green;
+           }
+        }
+    }    
 }
